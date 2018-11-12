@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="Mosaddek" name="author" />
+    <meta content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina" name="keyword" />
+    <link href="img/favicon.html" rel="shortcut icon" />
+    <title>
+        克瑞米艾商户版
+    </title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-reset.css" rel="stylesheet" />
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style-responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+    <section class="" id="container">
+        <!--header start-->
+        <header class="header white-bg">
+            <div class="sidebar-toggle-box">
+                <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="right">
+                </div>
+            </div>
+            <!--logo start-->
+            <a class="logo" href="#">
+                    <span>
+                        克瑞米艾
+                    </span>
+                </a>
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <!--  notification end -->
+            </div>
+            <div class="top-nav ">
+                <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                    <li>
+                        <input class="form-control search" placeholder="Search" type="text">
+                        </input>
+                    </li>
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <img alt="" src="/favicon.ico">
+                                    <span class="username">
+                                        <?php echo $_SESSION['nickname']; ?>
+                                    </span>
+                                    <b class="caret">
+                                    </b>
+                                </img>
+                            </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up">
+                            </div>
+                            <li>
+                                <a href="../logout.php">
+                                        <i class="icon-key">
+                                        </i>
+                                        退出登录
+                                    </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+                <!--search & user info end-->
+            </div>
+        </header>
+        <!--header end-->
+        <!--sidebar start-->
+        <aside>
+            <div class="nav-collapse " id="sidebar">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu">
+                   <li class="active">
+                        <a class="" href="../../index.php">
+                                <img src='/favicon.ico' />
+                                <span>
+                                    Creamyice首页
+                                </span>
+                            </a>
+                    </li>
+                    <li class="active">
+                        <a class="" href="javascript:void();">
+                                <i class="icon-shopping-cart">
+                                </i>
+                                <span>
+                                    补货订单
+                                </span>
+                            </a>
+                    </li>
+                    <li class="active">
+                        <a class="" href="./sales/list.php">
+                                <i class="icon-cogs">
+                                </i>
+                                <span>
+                                    SalesOrders
+                                </span>
+                            </a>
+                    </li>
+                    <li class='active'>
+                      <a class="" href="./store.php">
+                          <i class="icon-user"></i>
+                          <span>Store List</span>
+                      </a>
+                    </li>
+                    <li class='active'>
+                      <a class="" href="./add_admin.php">
+                          <i class="icon-user"></i>
+                          <span>AddAdmin</span>
+                      </a>
+                    </li>
+                   <!-- 
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon-cogs"></i>
+                          <span>SalesOrders</span>
+                          <span class="arrow"></span>
+                      </a>
+                  </li>
+                  
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon-tasks"></i>
+                          <span>Form Stuff</span>
+                          <span class="arrow"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="form_component.html">Form Components</a></li>
+                          <li><a class="" href="form_wizard.html">Form Wizard</a></li>
+                          <li><a class="" href="form_validation.html">Form Validation</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon-th"></i>
+                          <span>Data Tables</span>
+                          <span class="arrow"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="basic_table.html">Basic Table</a></li>
+                          <li><a class="" href="dynamic_table.html">Dynamic Table</a></li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a class="" href="inbox.html">
+                          <i class="icon-envelope"></i>
+                          <span>Mail </span>
+                          <span class="label label-danger pull-right mail-info">2</span>
+                      </a>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon-glass"></i>
+                          <span>Extra</span>
+                          <span class="arrow"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="blank.html">Blank Page</a></li>
+                          <li><a class="" href="profile.html">Profile</a></li>
+                          <li><a class="" href="invoice.html">Invoice</a></li>
+                          <li><a class="" href="404.html">404 Error</a></li>
+                          <li><a class="" href="500.html">500 Error</a></li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a class="" href="login.html">
+                          <i class="icon-user"></i>
+                          <span>Login Page</span>
+                      </a>
+                  </li>
+                  -->
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                <!--state overview start-->
+                <div class="row state-overview">
+                    <div class="col-lg-6 col-sm-6">
+                        <section class="panel" style="margin-bottom: 0;">
+                            <div class="symbol terques">
+                                <i class="icon-user">
+                                    </i>
+                            </div>
+                            <div class="value">
+                                <h1 style=" font-size: 26px; padding-top: 10px; color: #333;">
+                                        <?php echo $store_total;?>
+                                    </h1>
+                                <p>
+                                    商户数量
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <section class="panel" style="margin-bottom: 0;">
+                            <div class="symbol red">
+                                <i class="icon-tags">
+                                    </i>
+                            </div>
+                            <div class="value">
+                                <h1 style=" font-size: 26px; padding-top: 10px; color: #333;">
+                                        <?php echo $total;?>
+                                    </h1>
+                                <p>
+                                    补货次数
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <!--state overview end-->
+            </section>
+            <!--main content start-->
+            <section class="wrapper" style="margin-top: 10px; padding: 0px 15px  0px  15px;">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!--breadcrumbs start -->
+                        <ul class="breadcrumb" style="margin-bottom: 0;">
+                            <!--<li><a href="#"><i class="icon-home"></i> 补货订单</a></li>
+                          <li><a href="#">Library</a></li>-->
+                            <li class="active">
+                                <i class="icon-home">
+                                    </i> 补货订单
+                            </li>
+                        </ul>
+                        <!--breadcrumbs end -->
+                    </div>
+                </div>
+            </section>
+            <section>
+                <section class="wrapper" style="margin-top: 10px; padding: 0px 15px  15px  15px;">
+                    <!-- page start-->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <section class="panel">
+                                <header class="panel-heading">
+                                    商户补货订单查询
+                                </header>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <section class="">
+                                            <div class="panel-body">
+                                                <form action="#" class="form-horizontal tasi-form">
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-1">
+                                                            按单号查询
+                                                        </label>
+                                                        <div class="col-sm-6">
+                                                            <input class="form-control" id="byNumber" type="number" />
+                                                        </div> 
+                                                        <button class="btn btn-shadow btn-success" id='btnNumber' type="button">
+                                                            确定
+                                                        </button>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-sm-1">
+                                                            按日期范围查询
+                                                        </label>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-prepend">
+                                                                查询起始日期：<input  id="dateStart" type="date" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                查询截至日期：<input  id="dateEnd" type="date" />
+                                                            </div>
+                                                        </div>
+                                                        <button class="btn btn-shadow btn-info" id="dateButton" type="button">
+                                                            确定
+                                                        </button>
+                                                    </div>
+                                                    <!--date picker end-->
+                                                </form>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <table class="table table-striped border-top" id="sample_1" style="background-color:#FFF;">
+                        <thead>
+                            <tr>
+                               <th class="hidden-phone" style=" width: 60px;">
+                                    <span style='background-color:#2DF4F6;border-radius: 40%;padding:10%;cursor: pointer;' id="export">导出</span>
+                                </th>
+                                <th class="hidden-phone" style=" width: 90px;">
+                                    订单号
+                                </th>
+                                <th class="hidden-phone" style=" width: 90px;">
+                                    订单状态
+                                </th>
+                                <th class="hidden-phone" style=" width: 90px;">
+                                    配送日期
+                                </th>
+                                <th>
+                                    商户名
+                                </th>
+                                <th class="hidden-phone">
+                                    补货详情<span style='color:#11BFA1;margin-left:20px;'>温馨提醒：未配送订单可以点击查看智能分析</span>
+                                </th>
+                                <th class="hidden-phone" style=" width: 100px;">
+                                    商户备注
+                                </th>
+                                <th class="hidden-phone" style=" width: 100px;">
+                                    联系人
+                                </th>
+                                <th class="hidden-phone">
+                                    电话
+                                </th>
+                                <th class="hidden-phone">
+                                    下单地址
+                                </th>
+                                <th class="hidden-phone">
+                                    申请时间
+                                </th>
+                                <th class="hidden-phone">
+                                    操作选项
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php if(!empty($lists) && is_array($lists)) { ?>
+                            <?php foreach($lists as $key=>$val){ ?>
+                            <tr class="odd gradeX">
+                              <td>
+                                    <input type='checkbox' class="select-down" value="<?= $val['id']?>" />
+                                </td>
+                                <td style="line-height: 30px;">
+                                    <?= $val['number']?>
+                                </td>
+                                <td style="line-height: 30px;">
+                                    <?php 
+                                         switch($val['status']){
+                                           case '1':
+                                           echo '<span style="color:red;">订单申请</span>';
+                                           break;
+                                           case '2':
+                                           echo '<span style="color:#13F9ED;">审核通过</span>';
+                                           break;
+                                           case '3':
+                                           echo '<span style="color:#57D1E7;">正在配送</span>';
+                                           break;
+                                           case '4':
+                                           echo '订单完成';
+                                           break;
+                                           default:
+                                           echo '订单异常';
+                                           break;
+                                       }
+                                     ?>
+                                </td>
+                                <td style="line-height: 30px;">
+                                    <?php echo $val['cour_date']; ?>
+                                </td>
+                                <td style="line-height: 30px;">
+                                    <?php echo $val['store'] ?>
+                                </td>
+                                <?php if($val['status'] < 3){ ?>
+                                <td class="hidden-phone" style="line-height: 30px;">
+                                    <a onclick="details(<?php echo $val['wid']; ?>,<?php echo $val['id']; ?>,'<?php echo $val['cour_date']; ?>')" onmouseleave='divHide()' id='det_<?php echo $val["id"]; ?>'>
+                                        <?php echo $val['detail']; ?>
+                                    </a>
+                                    <br/>
+                                    <!--  <span style='color:red;'>上次：<?php echo $val['detail']; ?></span><br />
+                                        <span style='color:green;'>分析：<?php echo $val['detail']; ?></span> -->
+                                </td>
+                                <?php }else{ ?>
+                                <td class="hidden-phone" style="line-height: 30px;">
+                                    <span id='det_<?php echo $val["id"]; ?>'>
+                                            <?php echo $val['detail']; ?>
+                                        </span>
+                                    <br/>
+                                    <!--  <span style='color:red;'>上次：<?php echo $val['detail']; ?></span><br />
+                                        <span style='color:green;'>分析：<?php echo $val['detail']; ?></span> -->
+                                </td>
+                                <?php } ?>
+                                <td class="hidden-phone" style="line-height: 30px;">
+                                    <?php echo $val['message']; ?>
+                                </td>
+                                <td class="hidden-phone" style="line-height: 30px;">
+                                    <?php echo $val['name']; ?>
+                                </td>
+                                <td class="center hidden-phone" style="line-height: 30px;">
+                                    <?php echo $val['telephone']; ?>
+                                </td>
+                                <td class="hidden-phone" style="line-height: 30px;">
+                                    <?php echo $val['address']; ?>
+                                </td>
+                                <td class="hidden-phone" style="line-height: 30px;">
+                                    <?php echo $val['apply_date']; ?>
+                                </td>
+                                <td class="hidden-phone" style="line-height: 30px;">
+                                    <!-- <a href="modify-replenishment.php?repid=<?php echo $val['id']; ?>" style="padding-right:5px;">
+                                            <button type="button" class="btn btn-success">修改</button>
+                                        </a> -->
+                                    <?php if($val['status'] == 1) {?>
+                                    <!-- <button type="button" class="btn btn-danger" onclick="confirmOrder(<?php echo $val['id']; ?>)">待审核</button> -->
+                                    <a href="modify-replenishment.php?repid=<?php echo $val['id']; ?>" style="padding-right:5px;">
+                                        <button class="btn btn-danger" type="button">
+                                            待审核
+                                        </button>
+                                    </a>
+                                    <?php }else if($val['status'] == 2){ ?>
+                                    <a href="modify-replenishment.php?repid=<?php echo $val['id']; ?>" style="padding-right:5px;">
+                                        <button class="btn" style="background-color:#13F9ED;" type="button">
+                                            待配送
+                                        </button>
+                                    </a>
+                                    <?php }else if($val['status'] == 3) {?>
+                                    <button class="btn" style="background-color: #787182;" type="button">
+                                        配送中...
+                                    </button>
+                                    <?php } else {?>
+                                    <button class="btn" type="button">
+                                        已完成
+                                    </button>
+                                    <?php } ?>
+                                </td>
+                            </tr>
+                            <?php } ?>
+                            <?php }else { ?>
+                            <tr class="odd gradeX">
+                                <td align="center" colspan="10">
+                                    补货账单为空
+                                </td>
+                            </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                    <div class="text-center" id='paginate'>
+                        <ul class="pagination">
+                          <!-- <li>                             
+                              <a style='margin-right:40px;background-color:#2DF4F6;border-radius: 10%;' href='download_replist.php?page=<?php echo $curPage; ?>&size=<?php echo $size; ?>'>
+                                  下载选中账单
+                                </a>
+                            </li> -->
+                            <li>                             
+                              <a style='margin-right:40px;background-color:#2DF4F6;border-radius: 10%;' href='download_replist.php?page=<?php echo $curPage; ?>&size=<?php echo $size; ?>'>
+                                  下载本页账单
+                                </a>
+                            </li>
+                            <li>
+                                <?php if($curPage > 1){ ?>
+                                  <a href="?<?php $prev = $curPage -1; echo query_encode("page=$prev"); ?>">
+                                        «
+                                    </a>
+                                <?php } ?>
+                            </li>
+                            <li>
+                                <a href="#" style='color: green;font-weight:bold;'>
+                                        <?php echo $curPage; ?>
+                                    </a>
+                            </li>
+                            <li>
+                               <?php if($curPage < $totalPage){ ?>
+                                   <a href="?<?php $next =$curPage + 1; echo query_encode("page=$next"); ?>">
+                                        »
+                                    </a>
+                               <?php } ?>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="receiptInfo" style="padding-left:20%;font-size:130%;position:fixed;top:25%;width:100%;background-color:#ECF9FD;color:#25BECA;display:none;font-weight:bold;">
+                    </div>
+                </section>
+            </section>
+        </section>
+    </section>
+</body>
+
+</html>
+<!-- page end-->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/search.js"></script>
+<script type="text/javascript" charset="utf-8" async defer>
+  function details(wid, id, haha) {
+      var cour_date = haha;
+      var ele = '#det_' + id;
+      $.get('./analysis.php', { wid: wid, next: cour_date }, function(res) {
+          var div = $('#receiptInfo');
+          if (res.code == 0) {
+              div.html('<h4>智能分析---</h4>\
+                <span>上次补货数据： ' + res.analysis.detail + '</span><br />\
+                <span>上次补货日期：' + res.analysis.cour_date + '==============本次配送日期：' + cour_date + '</span><br />\
+                <span>上次补货时间至当前时间共销售：郁金香雪吻(' + res.proCounts[0].sums + ') 格罗宁根黑松(' + res.proCounts[1].sums + ') 海牙圣杯(' + res.proCounts[2].sums + ')</span><br />\
+                <span> 预计到补货日期还可售出： 郁金香雪吻(' + res.proCounts[0].next + ') 海牙圣杯(' + res.proCounts[1].next + ') 格罗宁根黑松(' + res.proCounts[2].next + ')</span><br />\
+                <span> 共计从上次补货到下次补货使用：格罗宁根黑松(' + res.proCounts[0].total + ') 郁金香雪吻(' + res.proCounts[1].total + ') 海牙圣杯(' + res.proCounts[2].total + ')预计原味奶浆共使用量(' + res.milk + ')</p>');
+          } else {
+              div.html('<span>暂无分析数据</span>');
+          }
+          div.show();
+      }, 'json')
+      return;
+  }
+  function divHide() {
+      $('#receiptInfo').css('display', 'none');
+  }
+
+  $('#export').click(function(res){
+      var ids = '';
+      $.each($('.select-down'),function(res){
+        if(this.checked){
+          ids += $(this).val() + ',';
+        }
+      })
+      if(ids == ''){
+        alert("请选择你要导出的订单");
+        return false;
+      }
+      window.location.href='./download_replist.php?ids='+ids;
+  })
+</script>

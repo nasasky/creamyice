@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="img/favicon.html">
+    <title>克瑞米艾商户版</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css" />
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-colorpicker/css/colorpicker.css" />
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-daterangepicker/daterangepicker.css" />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <section id="container" class="">
+        <!--header start-->
+        <header class="header white-bg">
+            <div class="sidebar-toggle-box">
+                <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
+            </div>
+            <!--logo start-->
+            <a href="#" class="logo"><span>克瑞米艾</span></a>
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <!--  notification end -->
+            </div>
+            <div class="top-nav ">
+                <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                    <li>
+                        <input type="text" class="form-control search" placeholder="Search">
+                    </li>
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="" src="/favicon.ico">
+                            <span class="username"><?php echo $_SESSION['nickname']; ?></span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+                            <li><a href="../logout.php"><i class="icon-key"></i>退出登录</a></li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+                <!--search & user info end-->
+            </div>
+        </header>
+        <!--header end-->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu">
+                  <li class="active">
+                        <a class="" href="../../index.php">
+                                <img src='/favicon.ico' />
+                                <span>
+                                    Creamyice首页
+                                </span>
+                            </a>
+                    </li>
+                   <li class="active">
+                        <a class="" href="index.php">
+                                <i class="icon-shopping-cart">
+                                </i>
+                                <span>
+                                    补货订单
+                                </span>
+                            </a>
+                    </li>
+                    <li class="active">
+                        <a class="" href="./sales/list.php">
+                                <i class="icon-cogs">
+                                </i>
+                                <span>
+                                    SalesOrders
+                                </span>
+                            </a>
+                    </li>
+                     <li class='active'>
+                      <a class="" href="./store.php">
+                          <i class="icon-user"></i>
+                          <span>Store List</span>
+                      </a>
+                    </li>
+                     <li class='active'>
+                      <a class="" href="./add_admin.php">
+                          <i class="icon-user"></i>
+                          <span>AddAdmin</span>
+                      </a>
+                    </li>
+                    <!--
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon-cogs"></i>
+                          <span>Components</span>
+                          <span class="arrow"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="grids.html">Grids</a></li>
+                          <li><a class="" href="calendar.html">Calendar</a></li>
+                          <li><a class="" href="charts.html">Charts</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon-tasks"></i>
+                          <span>Form Stuff</span>
+                          <span class="arrow"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="form_component.html">Form Components</a></li>
+                          <li><a class="" href="form_wizard.html">Form Wizard</a></li>
+                          <li><a class="" href="form_validation.html">Form Validation</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon-th"></i>
+                          <span>Data Tables</span>
+                          <span class="arrow"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="basic_table.html">Basic Table</a></li>
+                          <li><a class="" href="dynamic_table.html">Dynamic Table</a></li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a class="" href="inbox.html">
+                          <i class="icon-envelope"></i>
+                          <span>Mail </span>
+                          <span class="label label-danger pull-right mail-info">2</span>
+                      </a>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon-glass"></i>
+                          <span>Extra</span>
+                          <span class="arrow"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="blank.html">Blank Page</a></li>
+                          <li><a class="" href="profile.html">Profile</a></li>
+                          <li><a class="" href="invoice.html">Invoice</a></li>
+                          <li><a class="" href="404.html">404 Error</a></li>
+                          <li><a class="" href="500.html">500 Error</a></li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a class="" href="login.html">
+                          <i class="icon-user"></i>
+                          <span>Login Page</span>
+                      </a>
+                  </li>
+                  -->
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                <div class=" state-overview">
+                    <div class="col-lg-6 col-sm-6">
+                        <section class="panel" style="margin-bottom: 0;">
+                            <div class="symbol terques">
+                                <i class="icon-bullhorn"></i>
+                            </div>
+                            <div class="value">
+                                <h1 style=" font-size: 26px; padding-top: 10px; color: #333;"><?php echo $lists['number']; ?></h1>
+                                <p>订单号</p>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <section class="panel" style="margin-bottom: 0;">
+                            <div class="symbol red">
+                                <i class="icon-home"></i>
+                            </div>
+                            <div class="value">
+                                <h1 style=" font-size: 26px; padding-top: 10px; color: #333;"><?php echo $lists['store']; ?></h1>
+                                <p>商户名称</p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <section class="wrapper" style="margin-top: 20px; padding: 0px 15px  15px  15px;">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!--breadcrumbs start -->
+                            <ul class="breadcrumb" style="margin-bottom: 0;">
+                                <li><a href="index.html"><i class="icon-home"></i> 补货订单</a></li>
+                                <li class="active">修改订单</li>
+                            </ul>
+                            <!--breadcrumbs end -->
+                        </div>
+                    </div>
+                </section>
+                <form class="form-horizontal tasi-form" method="post" action='modify.php' onsubmit='return check_form();'>
+                    <div>
+                        <div class="col-lg-12">
+                            <input type='hidden' name='repid' value="<?php echo $_GET['repid']; ?>" />
+                            <input type='hidden' name='status' value="<?php echo $lists['status']; ?>" />
+                            <section class="panel">
+                                <header class="panel-heading">
+                                    确认订单信息无误后，再做修改！
+                                </header>
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">联系人</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name='name' value="<?php echo $lists['name']; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">送货日期</label>
+                                        <div class="col-sm-10">
+                                            <input type="date" class="form-control" name='cour_date' value="<?php echo $lists['cour_date']; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">电话</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name='telephone' value="<?php echo $lists['telephone']; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">地址</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name='address' value="<?php echo $lists['address']; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">申请时间</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control" id="disabledInput" type="text" value="<?php echo $lists['apply_date']; ?>" disabled="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">备注详情</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control" id="disabledInput" name='message' type="text" value="<?php echo $lists['message']; ?>">
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="panel">
+                                <div class="panel-body">
+                                    <div class="form-horizontal tasi-form">
+                                        <?php foreach($lists['details'] as $key=>$val) {?>
+                                        <div class="form-group has-success">
+                                            <label class="control-label col-lg-2" for="inputSuccess">
+                                                <?php echo substr( $val, strpos($val,'=')+1, strpos($val,'/') - strpos($val,'=') -1); ?>&nbsp;
+                                                (<?php echo substr( $val, strpos($val,'/')+1, strpos($val,'|') - strpos($val,'/') -1); ?>)
+                                            </label>
+                                            <div class="col-lg-10">
+                                                <input type="text" class="form-control" id="inputSuccess" name="<?php echo 'material_ids['.substr($val,0,strpos($val,'=')).']'; ?>" value="<?php echo substr($val,strpos($val,'|')+1); ?>">
+                                               
+                                            </div>
+                                        </div>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-lg-offset-2 col-lg-10">
+                        <input type='submit' class="btn btn-danger" value='<?php if($lists["status"] == 1) echo "确认审核";else echo "确认配送"; ?>'>
+                        <a class="btn btn-default" href='./index.php'>取消</a>
+                    </div>
+                </form>
+            </section>
+        </section>
+        <!-- js placed at the end of the document so the pages load faster -->
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.scrollTo.min.js"></script>
+        <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+        <script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+       
+        <script type="text/javascript" charset="utf-8" async defer>
+           function check_form(){
+             if(confirm('你确定要提交吗？')){
+                return;
+             }else{
+                return false;
+             }
+           }
+        </script>
+</body>
+
+</html>

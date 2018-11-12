@@ -1,0 +1,9 @@
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/322e0e");
+
+  
+@font-face {font-family: 'UniversLTPro-Condensed';src: url('webfonts/322E0E_0_0.eot');src: url('webfonts/322E0E_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/322E0E_0_0.woff2') format('woff2'),url('webfonts/322E0E_0_0.woff') format('woff'),url('webfonts/322E0E_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'UniversLTPro-BoldCond';src: url('webfonts/322E0E_1_0.eot');src: url('webfonts/322E0E_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/322E0E_1_0.woff2') format('woff2'),url('webfonts/322E0E_1_0.woff') format('woff'),url('webfonts/322E0E_1_0.ttf') format('truetype');}
+ 

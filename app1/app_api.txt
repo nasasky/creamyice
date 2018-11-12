@@ -1,0 +1,149 @@
+                                          Creamyice  ------        APP API 接口文档
+===================================================================================================================================    
+
+//全局接口统一必须POST参数
+    Int    wid     =  app商户标识
+    String token   =  19837e4d1739579b41f5a76de9b555c8 接口调用凭证
+    String sn      =  机器唯一标识
+
+----------------------------------------------------------------------------------------------------
+// 一： App-wechat native api 微信支付二维码接口
+    (1) URL地址: 
+            https://partner.creamyice.com/app1/native.php
+    (2) POST请求所需数据:
+            Json   product =  产品json对象 {
+  	              String name     = 产品名称
+  	              double  price   = 单价
+   	              double  amount  = 总价
+        		      Int     num     = 数量
+        		      double discount = 折扣优惠
+  	        }
+    (3) RETURN接口返回数据:
+        成功返回--示例：
+            json类型
+            {
+                "code": 200,
+                "msg": "Get WechatQRcode Successful",
+                "data": {
+                    "code_url": "weixin:\/\/wxpay\/bizpayurl?pr=X4Zyvpg",
+                    "order_number": "TnclM0QlM0Q="
+                }
+            }
+        错误返回--示例：
+            json类型
+            {
+                "code": 1003,
+                "msg": "machine is no authorization"
+            }
+--------------------------------------------------------------------------------------------------------            
+// 二： App product api 产品接口
+    (1) URL地址: 
+            https://partner.creamyice.com/app1/product.php
+    (2) POST请求所需数据:
+            无
+    (3) RETURN接口返回数据:
+        成功返回--示例：
+            json类型
+            {
+                "code": 200,
+                "msg": "query product is successful",
+                "data": {
+                    "product": [{
+                        "id": "1",
+                        "name": "郁金香雪吻冰淇淋",
+                        "price": "15",
+                        "description": "脆皮脆筒、优质小麦粉",
+                        "img": "\/we\/app\/yujinxiang.jpg"
+                    }, {
+                        "id": "2",
+                        "name": "格罗宁根黑松冰淇淋",
+                        "price": "12",
+                        "description": "竹炭粉、优质小麦粉",
+                        "img": "\/we\/app\/geluoning.jpg"
+                    }, {
+                        "id": "3",
+                        "name": "海芽圣杯",
+                        "price": "18",
+                        "description": "来自荷兰海牙的绝顶风情",
+                        "img": "\/we\/app\/haiya.jpg"
+                    }]
+                }
+            }
+        错误返回--示例：
+            json类型
+            {
+                "code": 1003,
+                "msg": "machine is no authorization"
+            }
+--------------------------------------------------------------------------------------------------------
+// 三：App-wechat order api 订单支付结果查询
+    (1) URL地址: 
+            https://partner.creamyice.com/app1/order.php
+    (2) POST请求所需数据:
+            String type = 'query'
+            String order_number = '二维码接口反回的订单编号'
+    (3) RETURN接口返回数据:
+        成功返回--示例：
+            json类型  备注： 订单状态码: 1=>已创建未支付，2=>支付成功待取货  3=>已取货，订单完成  4=>已评价  5=>退款订单
+            {
+                "code": 200,
+                "msg": "query order is successful",
+                "data": {
+                    "order": {
+                        "status": "1",
+                        "price": "12",
+                        "name": "郁金香",
+                        "amount": "60",
+                        "count": "5",
+                        "order_number": "Cr-App154147465208045600",
+                        "paytime": "2018-11-06 11:24:12"
+                    }
+                }
+            }
+        错误返回--示例：
+            {
+                "code": 1003,
+                "msg": "machine is no authorization"
+            }
+--------------------------------------------------------------------------------------------------------    
+// 四： App login api 登录接口
+    (1) URL地址: 
+            https://partner.creamyice.com/app1/login.php
+    (2) POST请求所需数据:
+            String account = '账号'
+            String password = '密码'
+    (3) RETURN接口返回数据:
+        成功返回--示例：
+            json类型  备注： code = 200分两种情况 
+                (1) status = SUCCESS 登录成功 
+                (2) status = FAILURE 登录失败
+                登录成功 -- 账号密码存在且密码正确
+                {
+                    "code": 200,
+                    "msg": "quer user successful",
+                    "data": {
+                        "status": "SUCCESS",   //登录成功
+                        "msg": "Hello ! Login Successful...",
+                        "account": "test",
+                        "username": "test1234",
+                        "lastlogin": "1541486550"
+                    }
+                }   
+                登录失败 -- 账号或者密码错误
+                {
+                    "code": 200,
+                    "msg": "quer user successful",
+                    "data": {
+                        "status": "FAILURE",   //登录失败账号或者密码错误
+                        "msg": "Sorry ! Account OR Password Error...",
+                        "account": "test",
+                        "username": "I Dont Know",
+                        "lastlogin": 1541487229
+                    }
+                }
+        错误返回--示例：
+            {
+                "code": 1003,
+                "msg": "request parameter failure"
+            }
+--------------------------------------------------------------------------------------------------------    
