@@ -1,0 +1,96 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar" style="position:fixed;">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+      </view>
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content">
+          <view class="container page3" wx:if='{{numbers != -1}}'>
+            <view wx:for='{{numbers}}' wx:key='this'>
+              <view wx:if='{{item.status == 2 && item.ndate == date}}' class="allOrder">
+                <view>
+                  <view class="allTitle">
+                    <view>
+                      <text class='weui-20'>取单号：<text class='weui-80'>{{item.number}}</text></text>
+                      <view style='color: #999; font-size: 25rpx;'>
+                        <text>{{item.store}}</text>
+                      </view>
+                    </view>
+                  </view>
+                  <view class="allMessage">
+                    <view class="allType" wx:for='{{item.details}}' wx:key='this'>
+                      <text class="order_name">{{item[0]}}</text>
+                      <text class="price">x{{item[1]}}</text>
+                    </view>
+                    <view class="allType">
+                      <text class="order_name"></text>
+                      <text class="price">合计：{{item.total_count}}</text>
+                    </view>
+                    <view class="allLast">
+                      <view style='font-size: 25rpx;'>
+                        时间：{{item.paytime}}
+                      </view>
+                      <view>
+                        <button data-number='{{item.number}}' data-orid="{{item.id}}" data-detail='{{item.details}}' data-sn='{{item.sn}}' type="primary" size='mini' bindtap="openConfirm">确认</button>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view wx:else class="allOrder">
+                <view>
+                  <view class="allTitle" style='color: #ccc;'>
+                    <view>
+                      <text class='weui-20'>取单号：<text class='weui-80'>{{item.number}}</text></text>
+                      <view style='color: #ccc; font-size: 25rpx;'>
+                        <text>{{item.store}}</text>
+                      </view>
+                    </view>
+                  </view>
+                  <view class="allMessage">
+                    <view class="allType" style='color: #ccc;' wx:for='{{item.details}}' wx:key='*this'>
+                      <text class="order_name" style='color: #ccc;'>{{item[0]}}</text>
+                      <text class="price" style='color: #ccc;'>x{{item[1]}}</text>
+                    </view>
+                    <view class="allType">
+                      <text class="order_name"></text>
+                      <text class="price" style='color: #ccc;'>合计：{{item.total_count}}</text>
+                    </view>
+                    <view class="allLast">
+                      <view style='color: #ccc; font-size: 25rpx;'>
+                        时间：{{item.paytime}}
+                      </view>
+                      <view style='color: #ccc;font-size: 30rpx;'>
+                        {{item.status == 2?'已过期':'已领取'}}
+                      </view>
+                    </view>
+                  </view>
+                </view>
+
+              </view>
+            </view>
+          </view>
+          <view class="weui-loadmore weui-loadmore_line" wx:else>
+            <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无账单</view>
+          </view>
+          <view style='text-align: center;'>
+            <loading hidden="{{hasLoad}}">
+              加载中...
+            </loading>
+          </view>
+          <view style=" width: 100%;padding-bottom:60rpx; padding-top:20rpx;" hidden="{{hasMore}}">
+            <view style=" height: 1px; background-color: #ddd; width: 33%; float: left;margin-top:10px;"></view>
+            <view style='float: left; color:#999; width: 33%;text-align:center;'>我是有底线的</view>
+            <view style=' height: 1px; background-color: #ddd; width: 33%; float: right;margin-top:10px;'></view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>

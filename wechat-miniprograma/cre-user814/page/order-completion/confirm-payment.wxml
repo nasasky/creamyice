@@ -1,0 +1,82 @@
+<view class="app-bg">
+        <view class="" style='padding:20px 15px 5px;font-size: 16px; color:#333'>核对订单</view>
+        <view class="" style='padding:0px 15px 20px;font-size: 13px; color:#999'>请认真核对订单后下单</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                    <image src="../../resources/xiaoyin.jpg" style="width: 80px; height: 80px; display: block"/>
+                </view>
+                <view class="weui-cell__bd fs25" style='line-height:20px;'>
+                    <view style="font-size: 13px;">名称：海牙圣杯</view>
+                    <view style="font-size: 13px;color: #999;">数量：2个</view>
+                    <view style="font-size: 13px;color: #999;">门店地址：上海市宝山区大华路518号乐购超市3层</view>
+                </view>
+            </view>
+            </view>
+             
+
+              <view class="weui-cells__title mt40">支付方式</view>
+        <view class="weui-cells weui-cells_after-title">
+            <checkbox-group bindchange="checkboxChange">
+                <label class="weui-cell weui-check__label" wx:for="{{checkboxItems}}" wx:key="value">
+                    <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}"/>
+
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                        <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.checked}}"></icon>
+                        <icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{item.checked}}"></icon>
+                    </view>
+                    <view class="weui-cell__bd fs35" style='padding-top:8px;'>{{item.name}}</view>
+                </label>
+            </checkbox-group>
+          
+        </view>
+
+<view class='payment-bg'>
+  <view class='payment-left fs25 weui-f780'>合计:<text class='fs20'>￥</text><text class='fs45'>18</text>  <text class='ml20 fs20 weui-ddd'>已优惠:￥0</text></view>
+  <view class='fs45 payment-right'><text class='fs35'></text> 去付款</view>
+</view>
+</view>
+<!--<view>
+ <view class="weui-cells__title">请选择你需要购买的冰淇淋</view>
+        <view class="weui-cells weui-cells_after-title">
+            <checkbox-group bindchange="checkboxChange">
+                <label class="weui-cell weui-check__label" wx:for="{{checkboxItems}}" wx:key="value">
+                    <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}"/>
+
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                        <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.checked}}"></icon>
+                        <icon class="weui-icon-checkbox_success" type="success" size="23" wx:if="{{item.checked}}"></icon>
+                    </view>
+                    
+                    <view class="weui-cell__bd weui-f780">{{item.name}}</view>
+                    <!-- 主容器 
+                    <view class="stepper weui-0bb">  
+                      <!-- 减号
+                      <text class="{{minusStatus}}" bindtap="bindMinus">-</text>  
+                      <!-- 数值
+                      <input type="number" bindchange="bindManual" value="{{num}}" />  
+                      <!-- 加号 
+                      <text class="normal" bindtap="bindPlus">+</text>  
+                    </view>  
+                </label>
+            </checkbox-group>
+        </view>
+        <view style='margin:100rpx 0rpx 0rpx 0rpx; '>
+        <view class="weui-cells__title">付款类型</view>
+        <view class="weui-cells weui-cells_after-title">
+            <radio-group bindchange="radioChange">
+                <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
+                    <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}"/>
+
+                    <view class="weui-cell__bd">{{item.name}}</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
+                        <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+                    </view>
+                </label>
+            </radio-group>
+        </view>
+        </view>
+        <view style='margin:100rpx 30rpx 30rpx 30rpx; '>
+        <navigator url='../payment-success/payment-success'><button class="weui-btn" type="primary">￥30 去付款</button></navigator>
+        </view>
+</view>-->

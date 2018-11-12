@@ -1,0 +1,32 @@
+<view class='page'>
+  <view hidden='{{!display}}' style='z-index:9999;position:fixed; width:100%; padding-top:50px; text-align:center; height:100%; background-color:rgba(0,0,0,0.7); '>
+    <view>
+      <view bindtap='cancleShare' style=' text-align: right; padding-right:30px;'>
+        <image src='../../resources/share-x.png' style='height:28px; width:31px;'></image>
+      </view>
+      <view style='padding-bottom:30px;'>
+        <image src='../../resources/share-banner.png' style='height:225px; '></image>
+      </view>
+      <button open-type='share' plain size='mini' style='border:none;'>
+        <image src='../../resources/share-bottom.png' style='height:50px; width:170px;  '></image>
+      </button>
+    </view>
+  </view>
+</view>
+
+<view class='bgfff bgta' style='padding:50px 20px 50px 20px ;overflow: hidden;'>
+  <view style='color:#333; font-size: 40rpx;'>
+    <text>取餐号：</text>
+    <text style='color:#ff7800; font-size: 60rpx;'>{{or_number[0].number}}</text>
+  </view>
+  <view style=' text-align: center; color:#999; margin-top:10px;' class='fs25'>请出示取餐号给服务员，凭取餐号取餐。</view>
+  <view style=' text-align: center; color:#ccc; margin-top:5px;' class='fs25'>购买日期：{{or_number[0].date}}</view>
+  <view style='width:68%; margin: 0 auto;display: block;overflow: hidden; padding:20px 0px 10px 0px;'>
+    <navigator open-type='switchTab' url="/page/profile/profile">
+      <view class='succ-left'>查看订单</view>
+    </navigator>
+    <navigator open-type='switchTab' url="/page/feature/feature">
+      <view class='succ-right'>继续购买</view>
+    </navigator>
+  </view>
+</view>

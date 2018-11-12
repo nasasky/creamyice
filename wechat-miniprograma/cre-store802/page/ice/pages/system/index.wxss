@@ -1,0 +1,21 @@
+@import "../../../common/index.wxss";
+@import "../../../common/lib/weui.wxss";
+.system-an{
+  background-color: #4b4b4b;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: #eee;
+  line-height: 100rpx;
+  text-align: center;
+  height: 100rpx;
+}
+.mb100{
+  margin-bottom: 100px;
+}
+.weui-999999{
+background-color: #999999;
+}
+.fl{
+  float: left;
+}

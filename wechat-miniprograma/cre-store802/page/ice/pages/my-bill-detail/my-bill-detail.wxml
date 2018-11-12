@@ -1,0 +1,158 @@
+<view class="weui-panel weui-panel_access weui-mb20">
+  <view class="weui-panel__bd">
+    <view class="weui-media-box weui-media-box_appmsg">
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+        <image class="weui-media-box__thumb" src="../../resources/sh.png" />
+      </view>
+      <block wx:if="{{machine}}">
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view class="weui-media-box__title">{{machine.name}}</view>
+          <view class="weui-media-box__desc">地址：{{machine.address}}</view>
+          <view class="weui-media-box__desc">合同签约时间：{{machine.starttime}}</view>
+          <view class="weui-media-box__desc">合同到期时间：{{machine.endtime}}</view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view class="weui-media-box__title">{{weixin.nickname}}</view>
+          <view class="weui-media-box__desc">共{{weixin.machine_count}}台设备</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<view class="page" wx:if='{{machine.enable == 1}}'>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell" style='background: #ff902c'>
+      <view class="weui-cell__bd" style='padding-bottom:10px;'>
+        <view class="" style="font-size: 30px; color: #FFF;">{{year}}年{{month}}月</view>
+        <view style="font-size: 13px;color: #FFF; float: left;">总销售额：￥
+          <text style="font-size: 25px;">{{bill_amount}}</text>
+        </view>
+        <view style="font-size: 13px;color: #FFF; float: right; padding-top:10px;">月销量：
+          <text style='color:#FFF;'>{{bill_total}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view class="weui-flex table_title">
+      <view class="weui-flex__item">
+        <view class="placeholder">日期</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder">郁金香雪吻</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder">格罗宁根黑松</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder">海牙圣杯</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder">合计</view>
+      </view>
+    </view>
+    <view class="weui-flex" wx:for="{{bill}}" wx:key="this">
+      <view class="weui-flex__item">
+        <view class="placeholder">{{item.date}}</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder">{{item.count39?item.count39:0}}</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder">{{item.count42? item.count42 :0}}</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder">{{item.count43? item.count43 :0}}</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder">{{item.count?item.count:0}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="page" wx:else>
+  <view class="page__bd page__bd_spacing" wx:if='{{machine.ver == 0}}'>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell" style='background: #ff902c'>
+        <view class="weui-cell__bd" style='padding-bottom:10px;'>
+          <view class="" style="font-size: 30px; color: #FFF;">{{year}}年{{month}}月</view>
+          <view style="font-size: 13px;color: #FFF; float: left;">总销售额：￥
+            <text style="font-size: 25px;">{{bill_amount}}</text>
+          </view>
+          <view style="font-size: 13px;color: #FFF; float: right; padding-top:10px;">月销量：
+            <text style='color:#FFF;'>{{bill_total}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="weui-flex table_title">
+      <view class="weui-flex__item">
+        <view class="placeholder">日期</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder">甜蜜值</view>
+      </view>
+    </view>
+    <view class="weui-flex" wx:for="{{bill}}" wx:key="this">
+      <view class="weui-flex__item">
+        <view class="placeholder">{{item.date}}</view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder">{{item.count}}</view>
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell" style='background: #ff902c'>
+        <view class="weui-cell__bd" style='padding-bottom:10px;'>
+          <view class="" style="font-size: 30px; color: #FFF;">{{year}}年{{month}}月</view>
+          <view style="font-size: 13px;color: #FFF; float: left;">总销售额：￥
+            <text style="font-size: 25px;">{{bill_amount}}</text>
+          </view>
+          <view style="font-size: 13px;color: #FFF; float: right; padding-top:10px;">月销量：
+            <text style='color:#FFF;'>{{bill_total}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="page__bd page__bd_spacing">
+      <view class="weui-flex table_title">
+        <view class="weui-flex__item">
+          <view class="placeholder">日期</view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="placeholder">郁金香雪吻</view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="placeholder">格罗宁根黑松</view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="placeholder">海牙圣杯</view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="placeholder">合计CS</view>
+        </view>
+      </view>
+      <view class="weui-flex" wx:for="{{bill}}" wx:key="this">
+        <view class="weui-flex__item">
+          <view class="placeholder">{{item.date}}</view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="placeholder">{{item.count39?item.count39:0}}</view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="placeholder">{{item.count42? item.count42 :0}}</view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="placeholder">{{item.count43? item.count43 :0}}</view>
+        </view>
+        <view class="weui-flex__item">
+          <view class="placeholder">{{item.count?item.count:0}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

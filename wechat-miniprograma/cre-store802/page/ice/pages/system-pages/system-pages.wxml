@@ -1,0 +1,97 @@
+<view class="index">
+
+  <!-- <view class="index-hd">
+    <image class="index-logo" src="resources/kind/logo.png"></image>
+  </view> -->
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">系统名称：</view> 
+      </view>
+      <view class="weui-cell__bd">
+        <input style='font-size:30rpx;' class="weui-input" placeholder="{{machine.name}}" bindblur="setName"/>
+      </view>
+      <view class="weui-badge weui-1AAD19" bindtap="openToast" style="margin-left: 5px;">修改</view>
+    </view>
+  </view>
+  <view class="classname" style="background-color: #f1fbf0; padding:40rpx;">
+    <view class="weui-dz"><image style=" width:35px; height:35px;" src="../../resources/sh.png" /></view>
+    <view class="weui-dz">店名：{{machine.store}}</view>
+    <view class="weui-dz2">地址：{{machine.address}}</view>
+    <view class="weui-rq">合同签约时间：{{machine.starttime}} | 合同到期时间：{{machine.endtime}}</view>
+  </view>
+ <view class="weui-cells weui-cells_after-title">
+      <view class="classname">
+            <view class="weui-cell weui-left" style=" width: 38%; ">
+                <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                    <image src="../../resources/jqr.png" style="width: 30px; height: 30px; display: block"/>
+                </view>
+                <view class="weui-cell__bd">
+                    <view style="color:#888;font-size: 30rpx;">系统运行状态</view>
+                    <view class="weui3fb135" style="font-size: 30rpx;">{{status[props[0]]}}中</view>
+                </view>
+            </view>
+            
+            <view class="weui-cell weui-cell_access" style="border-left:1px solid #ddd; ">
+                <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                    <image src="../../resources/djs.png" style="width: 30px; height: 30px; display: block"/>
+                    <view wx:if="{{props[38] <= 5}}" class="weui-badge" style="position: absolute;top: -.6em;right: -.7em;background-color:#f64e4e;">警告</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <view style="color:#888;font-size: 30rpx;">系统清洗倒计时</view>
+                    <view class="weuie888" style="font-size: 30rpx;">还剩{{props[38]}}天</view>
+                </view>
+            </view>
+            </view>
+            
+            <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                    <image src="../../resources/xin.png" style="width: 30px; height: 30px; display: block"/>
+                </view>
+                <view class="weui-cell__bd"> 
+                    <view style="color:#888;font-size: 30rpx;">今日总计</view>
+                    <view class="weuie96a4a" style="font-size: 30rpx;">{{sweety}}</view>
+                    <view style="font-size: 20rpx; color:#ccc;">{{dateTime}}</view>
+                </view>
+                <navigator url="/page/ice/pages/sweety-detail/sweety-detail?sn={{sn}}&name={{machine.store}}&address={{machine.address}}&starttime={{machine.starttime}}&endtime={{machine.endtime}}" hover-class="other-navigator-hover"><view class="weui-cell__ft weui-cell__ft_in-access" style="font-size: 25rpx;">查看详情</view> </navigator>
+            </view>
+        </view>
+
+  <view class="page" style="margin-bottom: 50px; margin-top: 20px; overflow: hidden;">
+    <view class="page__bd mt30">
+      <view class="weui-grids">
+        <view class="weui-grid" hover-class="weui-grid_active" bindtap="openRefrigerationfirm">
+          <image class="weui-grid__icon" src="../../resources/refrigeration.png" />
+          <view class="weui-grid__label">制冷</view>
+        </view>
+        <view class="weui-grid" hover-class="weui-grid_active" bindtap="openCleanfirm">
+          <image class="weui-grid__icon" src="../../resources/clean.png" />
+          <view class="weui-grid__label">清洗</view>
+        </view>
+        <view class="weui-grid" hover-class="weui-grid_active" bindtap="openFreshfirm">
+          <image class="weui-grid__icon" src="../../resources/fresh.png" />
+          <view class="weui-grid__label">保鲜</view>
+         </view> 
+         <view style="background-color:#b9e1b8;" class="weui-grid" hover-class="weui-grid_active" bindtap="openRefreshfirm">
+          <image class="weui-grid__icon" src="../../resources/shuaxin.png" />
+          <view class="weui-grid__label">刷新</view>
+         </view> 
+         <view style="background-color:#b9e1b8;"  class="weui-grid" hover-class="weui-grid_active" bindtap="openStandbyfirm">
+          <image class="weui-grid__icon" src="../../resources/daiji.png" />
+          <view class="weui-grid__label">待机</view>
+         </view> 
+         <view style="background-color:#b9e1b8;"  class="weui-grid" hover-class="weui-grid_active" bindtap="openThawfirm">
+          <image class="weui-grid__icon" src="../../resources/jiedong.png" />
+          <view class="weui-grid__label">解冻</view>
+         </view> 
+      </view>
+    </view>
+  </view>
+
+  <view class="page__bd page__bd_spacing weui60">
+    <!-- <navigator url="../msg/msg" id="{{item.sn}}" bindtap="openLoading"> -->
+    <!-- </navigator> -->
+    <!-- <navigator url="../msg/msg" class="mt50" id="{{item.sn}}" bindtap="openLoading"> -->
+    <!-- </navigator> -->
+  </view>
+</view>

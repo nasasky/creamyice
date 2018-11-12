@@ -1,0 +1,86 @@
+<!--<view class="weui-panel weui-panel_access">
+            <view class="weui-panel__bd">
+                <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="../../resources/sh.png" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">{{machine.store}}</view>
+                        <view class="weui-media-box__desc">地址：{{machine.address}}</view>
+                        <view class="weui-media-box__desc">编号：{{machine.sn}}</view>
+                       <view class="weui-media-box__desc" style="padding-top:5px;">账期：{{year}}-{{month}}-{{1}}至{{year}}-{{month}}-{{days}}</view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+<view id="panel" class="flex-column">
+  <view class="flex-cell flex-row">
+    <text class="flex-cell flex-row">日期</text>
+    <text class="flex-cell flex-row">甜蜜值</text>
+    <text class="flex-cell flex-row">单价</text>
+    <text class="flex-cell flex-row">小计</text>
+  </view>
+  <block wx:for="{{stats}}" wx:for-item="item">
+  <view class="flex-row flex-cell fonzbill">
+    <text class="flex-cell flex-row">{{year}}-{{month}}-{{index+1}}</text>
+    <text class="flex-cell flex-row">{{item}}</text>
+    <text class="flex-cell flex-row">8.00</text>
+    <text class="flex-cell flex-row">{{item*8.00}}</text>
+  </view>
+  </block>
+  <view class="flex-row flex-cell fonzbill">
+    <text class="flex-cell flex-row">{{month}}月</text>
+    <text class="flex-cell flex-row">服务配送费</text>
+    <text class="flex-cell flex-row">1000</text>
+    <text class="flex-cell flex-row">1000</text>
+  </view>
+</view>
+            <view style="position:relative; padding:30px 15px 15px; color:#e96a4a; text-align:center;line-height:2.5em;">
+                <view class="weui-form-preview__value_in-hd">已确认(账单金额:¥{{bill_final}})</view>
+            </view>
+            -->
+
+              <view class="weui-panel weui-panel_access weui-mb20">
+            <view class="weui-panel__bd">
+                <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="../../resources/sh.png" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">{{machine.name}}</view>
+                        <view class="weui-media-box__desc">地址：{{machine.address}}</view>                       
+                        <view class="weui-media-box__desc">编号：{{machine.sn}}</view>
+                        <view class="weui-media-box__desc">起始时间：{{machine.starttime}}</view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+
+
+<view class="page">
+    <view class="page__bd page__bd_spacing">
+        <view class="weui-flex">
+            <view class="weui-flex__item">
+            <navigator open-type='navigate' url="/page/ice/pages/go-stat/go-stat?sn={{machine.sn}}"><view class="placeholder weui-0bb">查看往期账单</view></navigator>
+            </view>
+            <view class="weui-flex__item"><view class="placeholder weui-0bb">总甜蜜值：{{bill_total}}</view></view>
+            <view class="weui-flex__item"><view class="placeholder weui-0bb">总金额：{{bill_amount}}</view></view>
+        </view>
+        <view class="weui-flex table_title">
+            <view class="weui-flex__item"><view class="placeholder">日期</view></view>           
+            <view class="weui-flex__item"><view class="placeholder">郁金香雪吻</view></view>
+            <view class="weui-flex__item"><view class="placeholder">海牙圣杯</view></view>          
+            <view class="weui-flex__item"><view class="placeholder">DIY</view></view>
+             <view class="weui-flex__item"><view class="placeholder">甜蜜值</view></view>
+        </view>
+        <view class="weui-flex" wx:for="{{bill}}" wx:key="this">
+            <view class="weui-flex__item"><view class="placeholder">{{item.year}}-{{item.month}}-{{item.day}}</view></view>
+            <view class="weui-flex__item"><view class="placeholder">{{item.count39}}</view></view>
+            <view class="weui-flex__item"><view class="placeholder">{{item.count42}}</view></view>
+             <view class="weui-flex__item"><view class="placeholder">{{item.count43}}</view></view>
+             <view class="weui-flex__item"><view class="placeholder">{{item.count}}</view></view>
+        </view>
+    </view>
+</view>
+
+<button class="weui-btn" type="primary" bindtap="openConfirm">确认订单</button>

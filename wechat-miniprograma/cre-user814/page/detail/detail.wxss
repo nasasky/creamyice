@@ -1,0 +1,314 @@
+@import "../../common/weui.wxss";
+page { 
+    position: relative;  
+}
+.listitemInfoWrap{
+
+  padding-bottom:0;
+
+}
+.orderPage-sideBar,orderPage-sideBar2 {  
+  float: left;
+  height: 65%;
+  overflow: scroll;
+}
+.orderPage-sideBar2 {
+  width: 100%;
+}
+.menuList>view {
+  padding: 40rpx 0;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 2rpx solid #ddd;
+}
+.menuList2 {
+  background: white;
+  padding: 30rpx 20rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 2rpx solid #ddd;
+}
+.menuList2>.P_message {
+  text-align: left;
+  margin-left: 20rpx;
+  padding: 0;
+  border: 0;
+}
+.menuList2>view {
+  line-height: 44rpx;
+  width:65%;
+}
+.P_small {
+  color: #999;
+  font-size: 28rpx;
+}
+.line_t {
+  text-decoration: line-through;
+  font-size: 28rpx;
+  color: #999;
+  margin-right: 10rpx;
+}
+.P_message .iconfont {
+  font-size: 40rpx;
+  color: #ffe400;
+  padding:10rpx;
+}
+.P_bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.S_top {
+  margin-top: 10rpx;
+  background: white;
+  padding: 20rpx 40rpx;
+}
+.S_title {
+  font-weight: bold;
+  border-bottom: 2rpx solid #ddd;
+  padding-bottom: 20rpx;
+}
+.S_top>.iconfont {
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+.S_top>.iconfont:before {
+  margin-right: 20rpx;
+  font-size: 40rpx;
+}
+.S_top>.icon-zhekou:before {  
+  color: #f74d4d;
+}
+
+.orderPage-sideBar2 image {
+  width: 160rpx;
+  height: 160rpx;
+}
+.newUserPag image{
+  width: 100rpx;
+  height: 150rpx;
+  position: fixed;
+  bottom: 20%;
+  right: 40rpx;
+  z-index: 9999999;
+}
+.openPageBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999999999;
+  background: rgba(0,0,0,.2);
+  display: flex;
+  justify-content: center;
+}
+.openPage {
+  width: 86%;
+  margin-top: 200rpx;
+  position: relative;
+}
+.Picbg {
+  width: 100%;
+  height: 600rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.openPage .btn {
+  position: absolute;
+  top: 400rpx;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 400rpx;
+  height: 80rpx;
+}
+.pageLeft,.pageRight {
+  position: absolute;
+  z-index: 999999;
+}
+.pageLeft .price {
+  font-size: 60rpx;
+}
+.smalltext {
+  font-size: 32rpx;
+}
+.pageLeft { 
+  width: 140rpx;
+  line-height: 64rpx;
+  text-align: center;
+  top: 70rpx;
+  left: 50rpx;
+}
+.pageRight {
+  width: 400rpx;
+  line-height: 70rpx;
+  top: 70rpx;
+  left: 240rpx;
+}
+
+.Block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,.2);
+  z-index: 99999999999;
+}
+.total {
+  background: white;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+}
+.title {
+  text-align: center;
+  padding: 40rpx 0;
+}
+.title .iconfont {
+  font-size: 50rpx;
+  float: right;
+  margin-right: 40rpx;
+}
+/*buycar  */
+.page2 {
+margin-top: 10px;
+}
+.mr10 {
+margin-right: 10px;
+}
+.page2 .main {
+  background: #f2f2f2 !important;
+  width: 100%;
+  height: 100%;
+
+}
+.page2 .icon-true {
+  color: #999;
+}
+.color333 {
+  color: #333;
+}
+.page2 .active {
+  color: #ff7800!important;
+}
+.page2 .pro {
+  align-items: center;
+  justify-content: space-around;
+  font-size: 32rpx;
+}
+.page2 .pro>.icon-true {
+  color: #ddd;
+}
+.page2 .pro .iconfont {
+  font-size: 50rpx;
+  padding: 0rpx;  
+  color: #666;
+}
+.page2 .pro .icon-true {
+  color: #ddd;
+}
+.page2 .pro:nth-child(1) {
+  margin-top: 10rpx;
+}
+.page2 .padding {
+  padding-bottom: 230rpx;
+}
+.page2 .pro image { 
+  width: 80px;
+  height: 75px; 
+}
+.page2 .settlement {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  background: white;
+  border-top: 2rpx #ddd solid;
+}
+.page2 .tlement {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page2 .tlement .iconfont {
+  font-size: 40rpx;
+}
+.page2 .message {
+  width: 400rpx;  
+  margin-left: 20rpx;
+}
+.page2 .orderNum {
+  padding: 0 30rpx;
+}
+.page2 .message>view {
+  line-height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.orderLeft {
+  display: flex;
+  align-items: center;
+}
+.otherMoney {
+  padding-top: 10rpx;
+  color: #666;
+  font-size: 28rpx;
+}
+.page2 .buycar_icon {
+  position: relative;
+  width: 80rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 90rpx;
+  border-radius: 50%;
+  background: #ff7800;
+  color:#FFF;
+  margin-left: 40rpx;
+}
+.page2 .buycar_num {
+  text-align: center;
+  line-height: 28rpx;
+  background:#ffe400;
+  color:#ff7800;
+  border-radius: 50%;
+  width: 28rpx;
+  height: 28rpx;
+  font-size: 20rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+}
+.page2 .totalMoney {
+  margin-left: 40rpx;
+}
+.page2 .toPay {
+  padding: 40rpx 65rpx;
+  background: #ff7800;
+  color: #FFF;
+}
+.page2 .disablePay {
+  padding: 40rpx 80rpx;
+  background: #ccc;
+  color: #FFF;
+}
+.numBorder {
+display:inline-block;
+width:50rpx;
+height:50rpx;
+text-align:center;
+border-radius: 50px;
+}
+.promotion {
+    display: inline-block;
+    color: #ff7800;
+    border: 1px solid #ff7800;
+    font-size: 10px;
+    text-align: left;
+    padding: 2px 4px;
+  }

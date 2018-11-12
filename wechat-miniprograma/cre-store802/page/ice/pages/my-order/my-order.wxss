@@ -1,0 +1,37 @@
+@import "../../../common/index.wxss";
+@import "../../../common/lib/weui.wxss";
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+
+.weui-icon-search {
+margin-right:8px;
+font-size:inherit;
+margin-top:3px;
+}
+
+.weui-navbar__item.weui-bar__item_on {
+color:#FFF;
+background-color:#1AAD19;
+}
+.weui-navbar__item {
+position:relative;
+display:block;
+background-color: #FFF;
+-webkit-box-flex:1;
+-webkit-flex:1;
+flex:1;
+padding:13px 0;
+text-align:center;
+font-size:0;
+
+}
+button {
+margin-top:20rpx;
+margin-bottom:0rpx;
+font-size:14px;
+}

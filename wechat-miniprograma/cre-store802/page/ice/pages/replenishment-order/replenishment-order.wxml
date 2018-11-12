@@ -1,0 +1,51 @@
+<!--order.wxml  -->
+<view class="container page3" style='margin-bottom:250rpx; margin-top:50rpx; '>
+  <view class="allOrder" style='margin-bottom:150rpx;'>
+    <view wx:for='{{list}}' wx:key='this'>
+      <view class="allTitle">
+        <text>补货单号{{item.number}}</text>
+        <text bindtap="calling">联系小艾</text>
+        <text wx:if='{{item.status == 1}}' class="iconfont icon-more" bindtap="toDetail">待小艾审核</text>
+        <text wx:elif='{{item.status == 2}}' class="iconfont icon-more" bindtap="toDetail">待配送</text>
+        <text wx:elif='{{item.status == 3}}' class="iconfont icon-more" bindtap="toDetail">正在配送待确认</text>
+        <text wx:if='{{item.status == 4}}' class="iconfont icon-more" bindtap="toDetail">已完成</text>
+      </view>
+
+      <view class="allMessage">
+        <view wx:for='{{item.detail}}' wx:key='this' class="allType">
+          <text class="order_name">{{item[1]+' ('+item[2]+')'}}</text>
+          <text>X{{item[3]}}</text>
+        </view>
+        <view class="allLast">
+          <view>配送日期：{{item.cour_date}}</view>
+          <view>
+            <view wx:if='{{item.status < 3}}'>
+              <navigator url="../immediately-complete/immediately-complete?repid={{item.id}}" hover-class="navigator-hover" class="bg_y" style='background:#1aad19;border:2rpx #DDD solid;color:#fff;'>修改订单</navigator>
+            </view>
+            <view wx:elif='{{item.status == 3}}'>
+              <view bindtap="confirmOrder" data-index='{{index}}' data-repid='{{item.id}}' class="bg_y" style='padding:10rpx 20rpx;background-color:#e96a4a;color:white;font-weight:bold;'>确认订单</view>
+            </view>
+            <view wx:else>
+              <view style='padding:10rpx 20rpx;font-weight:bold;'>已完成</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view hidden='{{list.length>0}}' style='position:fixed;top:35%;left:20%;font-size:100%; color:#999;'>
+  啊哦！您还没有补货订单呦！
+</view>
+
+
+<view class="bottomfixed">
+  <navigator open-type='redirect' url='../replenishment-list/replenishment-list'>
+    <image src="../../resources/jia.png"></image>
+    <view style='font-size:14px; color:#666;'>补货</view>
+  </navigator>
+  <view>
+    <image src="../../resources/dd_hover.png"></image>
+    <view style='font-size:14px;color:#e96a4a;'>我的补货单</view>
+  </view>
+</view>

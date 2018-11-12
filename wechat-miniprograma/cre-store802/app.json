@@ -1,0 +1,90 @@
+{
+  "pages": [
+    "page/ice/index",
+    "page/ice/pages/order/order",
+    "page/ice/pages/swiper/swiper",
+    "page/ice/pages/progress/progress",
+    "page/ice/pages/system/index",
+    "page/ice/pages/system-pages/system-pages",
+    "page/ice/pages/msg/msg",
+    "page/ice/pages/member/member",
+    "page/ice/pages/my-system/my-system",
+    "page/ice/pages/settings/settings",
+    "page/ice/pages/settings2/settings2",
+    "page/ice/pages/register/register",
+    "page/ice/pages/login/login",
+    "page/ice/pages/password/password",
+    "page/ice/pages/my-bill-detail/my-bill-detail",
+    "page/ice/pages/coupon/coupon",
+    "page/ice/pages/confirmed_bill/confirmed_bill",
+    "page/ice/pages/my_to_bill/my_to_bill",
+    "page/ice/pages/confirmed_bill_two/confirmed_bill_two",
+    "page/ice/pages/details_of_the_bill/details_of_the_bill",
+    "page/ice/pages/confirmed_bill_detailed/confirmed_bill_detailed",
+    "page/ice/pages/replenishment/replenishment",
+     "page/ice/pages/replenishment-list/replenishment-list",
+    "page/ice/pages/replenishment-detail/replenishment-detail",
+    "page/ice/pages/go-stat/go-stat",
+    "page/ice/pages/sweety-detail/sweety-detail",
+    "page/ice/pages/my-order/my-order",
+    "page/ice/pages/my_bill/my_bill",
+    "page/ice/pages/fuse_bill_detail/fuse_bill_detail",
+    "page/ice/pages/fuse_bill/fuse_bill",
+    "page/ice/pages/retrieve-the-password/retrieve-the-password",
+    "page/ice/pages/list-of-goods/list-of-goods",
+    "page/ice/pages/immediately-order/immediately-order",
+    "page/ice/pages/immediately-address/immediately-address",
+    "page/ice/pages/immediately-address2/immediately-address2",
+    "page/ice/pages/immediately-complete/immediately-complete",
+    "page/ice/pages/replenishment-order/replenishment-order"
+  
+
+    
+  ],
+  "window": {
+    "enablePullDownRefresh": true,
+    "navigationBarTextStyle": "#FFF",
+    "navigationBarTitleText": "按时",
+    "navigationBarBackgroundColor": "#e96a4a",
+    "backgroundColor": "#eeeeee"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#e96a4a",
+    "borderStyle": "#eeeeee",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "page/ice/pages/order/order",
+        "iconPath": "image/peisong.png",
+        "selectedIconPath": "image/peisong_hover.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "page/ice/index",
+        "iconPath": "image/data_icon.png",
+        "selectedIconPath": "image/data_icon_hover.png",
+        "text": "数据"
+      },
+      {
+        "pagePath": "page/ice/pages/system/index",
+        "iconPath": "image/system_icon.png",
+        "selectedIconPath": "image/system_icon_hover.png",
+        "text": "系统"
+      },
+      {
+        "pagePath": "page/ice/pages/member/member",
+        "iconPath": "image/me_icon.png",
+        "selectedIconPath": "image/me_icon_hover.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

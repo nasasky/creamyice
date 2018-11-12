@@ -1,0 +1,145 @@
+
+<view class="page">
+    <view class="page__bd page__bd_spacing">
+        <view class="weui-flex">
+            <view class="weui-flex__item"><view class="placeholder">大杯</view></view>
+            <view class="weui-flex__item"><view class="placeholder">中杯</view></view>
+            <view class="weui-flex__item"><view class="placeholder">小杯</view></view>
+        </view>
+        <view class="weui-flex">
+            <view class="weui-flex__item"><view class="placeholder">5</view></view>
+            <view class="weui-flex__item"><view class="placeholder">5</view></view>
+            <view class="weui-flex__item"><view class="placeholder">8</view></view>
+        </view>
+    </view>
+</view>
+
+<!--
+<view class="weui-cells weui-cells_after-title weui-mb20">
+ <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+                    <navigator url='../details_of_the_bill/details_of_the_bill'><view style="display: inline-block; vertical-align: middle">2018-03-01</view></navigator>
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class='weui-0bb'>今日甜蜜值：6</view> 
+                    <view class="weui-media-box__info">
+                        <view class="weui-media-box__info__meta weui-999">大杯:10</view>
+                        <view class="weui-media-box__info__meta weui-999">中杯:10</view>
+                        <view class="weui-media-box__info__meta weui-999">小杯:10</view>
+                    </view>
+                </view>
+            </view>
+           
+</view> 
+
+<view class="weui-cells weui-cells_after-title weui-mb20">
+ <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+                    <view style="display: inline-block; vertical-align: middle">2018-03-02</view>
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class='weui-0bb'>甜蜜值：6</view>
+                    <view class="weui-media-box__info">
+                        <view class="weui-media-box__info__meta weui-999">大杯:10</view>
+                        <view class="weui-media-box__info__meta weui-999">中杯:10</view>
+                        <view class="weui-media-box__info__meta weui-999">小杯:10</view>
+                    </view>
+                </view>
+            </view>
+           
+</view> 
+
+<view class="weui-cells weui-cells_after-title weui-mb20">
+ <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+                    <view style="display: inline-block; vertical-align: middle">2018-03-03</view>
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class='weui-0bb'>甜蜜值：6</view>
+                    <view class="weui-media-box__info">
+                        <view class="weui-media-box__info__meta weui-999">大杯:10</view>
+                        <view class="weui-media-box__info__meta weui-999">中杯:10</view>
+                        <view class="weui-media-box__info__meta weui-999">小杯:10</view>
+                    </view>
+                </view>
+            </view>
+           
+</view> 
+
+<view class="weui-cells weui-cells_after-title weui-mb20">
+ <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+                    <view style="display: inline-block; vertical-align: middle">2018-03-04</view>
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class='weui-0bb'>甜蜜值：6</view>
+                    <view class="weui-media-box__info">
+                        <view class="weui-media-box__info__meta weui-999">大杯:10</view>
+                        <view class="weui-media-box__info__meta weui-999">中杯:10</view>
+                        <view class="weui-media-box__info__meta weui-999">小杯:10</view>
+                    </view>
+                </view>
+            </view>
+           
+</view> 
+
+<view class="weui-cells weui-cells_after-title weui-mb20">
+ <view class="weui-cell weui-cell_access">
+                <view class="weui-cell__bd">
+                    <view style="display: inline-block; vertical-align: middle">2018-03-05</view>
+                </view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class='weui-0bb'>甜蜜值：6</view>
+                    <view class="weui-media-box__info">
+                        <view class="weui-media-box__info__meta weui-999">大杯:10</view>
+                        <view class="weui-media-box__info__meta weui-999">中杯:10</view>
+                        <view class="weui-media-box__info__meta weui-999">小杯:10</view>
+                    </view>
+                </view>
+            </view>
+           
+</view>   
+-->
+<!--
+<view id="panel" class="flex-column">
+  <view class="flex-cell flex-row">
+    <text class="flex-cell flex-row">日期</text>
+    <text class="flex-cell flex-row">甜蜜值</text>
+    <text class="flex-cell flex-row">单价</text>
+    <text class="flex-cell flex-row">小计</text>
+  </view>
+  <block wx:for="{{stats}}" wx:for-item="item">
+  <view class="flex-row flex-cell fonzbill">
+    <text class="flex-cell flex-row">{{year}}-{{month}}-{{index+1}}</text>
+    <text class="flex-cell flex-row">{{item}}</text>
+    <text class="flex-cell flex-row">8.00</text>
+    <text class="flex-cell flex-row">{{item*8.00}}</text>
+  </view>
+  </block>
+  <view class="flex-row flex-cell fonzbill">
+    <text class="flex-cell flex-row">{{month}}月</text>
+    <text class="flex-cell flex-row">服务配送费</text>
+    <text class="flex-cell flex-row">1000</text>
+    <text class="flex-cell flex-row">1000</text>
+  </view>
+</view>
+            <view style="position:relative; padding:30px 15px 15px; color:#e96a4a; text-align:center;line-height:2.5em;">
+                <view class="weui-form-preview__value_in-hd">已确认(账单金额:¥{{bill_final}})</view>
+            </view>
+-->
+              

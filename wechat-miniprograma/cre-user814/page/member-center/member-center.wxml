@@ -1,0 +1,26 @@
+<view class='header-bg' wx:if='{{display}}'>
+  <view class='avatar'>
+    <view class='avatar-tx'>
+      <image src="{{userInfo.avatarUrl || '/resources/touxiang.png'}}" style="width: 60px; height: 60px; display: block;margin-left:-3rpx;margin-top:-3rpx;" />
+    </view>
+  </view>
+  <view class='login-btn'>{{userInfo.nickName || '神秘的我'}}</view>
+</view>
+<view class="weui-cells weui-cells_after-title">
+  <navigator url='/page/evaluate/evaluate?referer=member' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image src="../../resources/pingjia.png" style="margin-right:8px; margin-top: 3px; width:25px; height: 25px;"></image>
+    </view>
+    <view class="weui-cell__bd">历史评价</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+  <navigator url='../coupon/coupon' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image src="../../resources/yhq.png" style="margin-right:8px; margin-top: 3px; width:24px; height: 22px;"></image>
+    </view>
+    <view class="weui-cell__bd">我的红包</view>
+    <view class="weui-badge" style="margin-left: 5px;">{{count}}</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+
+</view>

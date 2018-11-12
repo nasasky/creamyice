@@ -1,0 +1,53 @@
+<view class="wx-view_KHAWVZ app-bg" data-c_e_id="wx_viewb7dbd52e">
+    <swiper autoplay="True" class="wx-swiper_Mn3JMs" data-c_e_id="wx_swiper43d9f094" indicator-dots="True" lower-threshold="50">
+        <swiper-item class="c-full wx-swiper-item_F6vCx8" data-c_e_id="wx_swiper_item015a5cd2">
+            <image bindtap="tap_d5808da3" class="wx-image_HsAX8s2" data-c_e_id="wx_image194006a3" mode="aspectFill" src="{{img}}" style="background-image: url(../../resources/xiaoyin.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat; "/>
+        </swiper-item>
+    </swiper>
+    <view class='feature detail-bg feoh'>
+       <text class="text_description fs45" data-c_e_id="wx_text354d27cc">{{name}}</text>
+        <view>
+         <view class="likeinfo" data-c_e_id="wx_viewcc4e89cb">
+            <text class="listitem_creattime" data-c_e_id="wx_text8c8804b3">{{description}}</text>               
+            </view>
+            <view class='feoh'>
+            <view class='weui-f780' style='float: left; padding-top:10px;'>
+            <text style='font-size: 12px;'>￥</text><text class='fs45'>{{price}}元</text>               
+            </view>
+            <view class="weui-cells weui-cells_after-title" style='float: right'>
+            <checkbox-group bindchange="checkboxChange">
+                <label class="weui-cell weui-check__label">
+                    <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}"/>
+                    <view class="stepper weui-0bb">  
+                     
+                      <text class="{{minusStatus}}" bindtap="bindMinus">-</text>  
+                    
+                      <input type="number" bindblur="bindManual" value="{{num}}" />  
+                      
+                      <text class="{{plusStatus}}" bindtap="bindPlus">+</text>  
+                    </view>  
+                </label>
+            </checkbox-group>
+        </view>
+    </view>
+    </view>
+    </view>
+
+    <view class="weui-cells__title fs25">用户须知</view>
+      <view class="weui-cells weui-cells_after-title fs25">
+            <view class="weui-cell">
+  
+                <view class="weui-cell__bd" style='line-height:22px;'>
+                    <view style="font-size: 12px;color: #999;">· 无需预约，店铺高峰时可能需要耐心等待</view>
+                    <view style="font-size: 12px;color: #999;">· 订单仅限本店使用，不可跨店使用</view>
+                    <view style="font-size: 12px;color: #999;">· 下单成功后请尽快去店兑换本产品</view>
+                    <view style="font-size: 12px;color: #999;">· 温馨提醒：每单只能购买四个冰淇淋</view>
+                </view>
+              
+            </view>
+      </view>
+    </view>
+<view class='payment-bg'>
+  <view class='payment-left weui-f780'><text style='font-size: 14px;'>￥</text><text class='fs45'>{{total_price}}元</text>   </view>
+ <navigator url='../confirm-payment/confirm-payment?sn={{sn}}&addr={{addr}}&name={{name}}&price={{price}}&num={{num}}&total_price={{total_price}}&address={{address}}&img={{img}}&store={{store}}&zone={{zone}}'><view class='fs45 payment-right'> 立即购买</view></navigator>
+</view>

@@ -1,0 +1,114 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="请输入取单号" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">输入取单号快速查找订单</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title" wx:if="{{countList[0].enable == 1}}">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <view style='font-size: 18px;color: #ff7800;'>出料数量：1</view>
+        <view style="font-size: 11px;color: #888888;">已使用：
+          <text class='weui-0bb'>{{count43}}</text>
+        </view>
+      </view>
+      <view class="weui-cell__ft" bindtap="openConfirmb" style='color:#666;'>
+        <button class="weui-btn" type="primary" plain="true">融合自提</button>
+      </view>
+    </view>
+  </view>
+  <!--新取单页面-->
+  <!--order.wxml  -->
+  <view class="container page3" wx:if='{{numbers}}'>
+    <view wx:for='{{numbers}}' wx:key='this'>
+      <view wx:if='{{item.status == 2}}' class="allOrder">
+        <view>
+          <view class="allTitle">
+            <view>
+              <text class='weui-20'>取单号：<text class='weui-80'>{{item.number}}</text></text>
+              <view style='color: #999; font-size: 25rpx;'>
+                <text>{{item.store}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="allMessage">
+            <view class="allType" wx:for='{{item.details}}' wx:key='this'>
+              <text class="order_name">{{item[0]}}</text>
+              <text class="price">x{{item[1]}}</text>
+            </view>
+            <view class="allType">
+              <text class="order_name"></text>
+              <text class="price">合计：{{item.total_count}}</text>
+            </view>
+            <view class="allLast">
+              <view style='font-size: 25rpx;'>
+                时间：{{item.paytime}}
+              </view>
+              <view>
+                <button data-number='{{item.number}}' data-index='{{index}}' data-orid="{{item.id}}" data-detail='{{item.details}}' data-sn='{{item.sn}}' type="primary" size='mini' bindtap="openConfirm">确认</button>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view wx:else class="allOrder">
+        <view>
+          <view class="allTitle" style='color: #ccc;'>
+            <view>
+              <text class='weui-20'>取单号：<text class='weui-80'>{{item.number}}</text></text>
+              <view style='color: #ccc; font-size: 25rpx;'>
+                <text>{{item.store}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="allMessage">
+            <view class="allType" style='color: #ccc;' wx:for='{{item.details}}' wx:key='*this'>
+              <text class="order_name" style='color: #ccc;'>{{item[0]}}</text>
+              <text class="price" style='color: #ccc;'>x{{item[1]}}</text>
+            </view>
+            <view class="allType">
+              <text class="order_name"></text>
+              <text class="price" style='color: #ccc;'>合计：{{item.total_count}}</text>
+            </view>
+            <view class="allLast">
+              <view style='color: #ccc; font-size: 25rpx;'>
+                时间：{{item.paytime}}
+              </view>
+              <view style='color: #ccc;font-size:30rpx;'>
+                已领取
+              </view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </view>
+  <view style='text-align: center; padding-top:40px;color:#999; font-size:30rpx;' wx:else>
+    亲,今天还没有一单呢!
+  </view>
+  <view style='text-align: center;'>
+    <loading hidden="{{hasLoad}}">
+      加载中...
+    </loading>
+  </view>
+  <view style=" width: 100%;padding-bottom:60rpx; padding-top:20rpx;" hidden="{{hasMore}}">
+    <view style=" height: 1px; background-color: #ddd; width: 33%; float: left;margin-top:10px;"></view>
+    <view style='float: left; color:#999; width: 33%;text-align:center;'>我是有底线的</view>
+    <view style=' height: 1px; background-color: #ddd; width: 33%; float: right;margin-top:10px;'></view>
+  </view>
+</view>

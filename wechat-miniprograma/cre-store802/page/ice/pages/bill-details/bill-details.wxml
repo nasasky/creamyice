@@ -1,0 +1,76 @@
+<view class="weui-panel weui-panel_access">
+            <view class="weui-panel__bd">
+                <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="../../resources/sh.png" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">{{machine.store}}</view>
+                        <view class="weui-media-box__desc">地址：{{machine.address}}</view>
+                        <view class="weui-media-box__desc">编号：{{machine.sn}}</view>
+                       <view class="weui-media-box__desc" style="padding-top:5px;">账期：{{year}}-{{month}}-{{1}}至{{year}}-{{month}}-{{days}}</view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+<view id="panel" class="flex-column">
+  <view class="flex-cell flex-row">
+    <text class="flex-cell flex-row">日期</text>
+    <text class="flex-cell flex-row">甜蜜值</text>
+    <text class="flex-cell flex-row">单价</text>
+    <text class="flex-cell flex-row">小计</text>
+  </view>
+  <block wx:for="{{stats}}" wx:for-item="item">
+  <view class="flex-row flex-cell fonzbill">
+    <text class="flex-cell flex-row">{{year}}-{{month}}-{{index+1}}</text>
+    <text class="flex-cell flex-row">{{item}}</text>
+    <text class="flex-cell flex-row">8.00</text>
+    <text class="flex-cell flex-row">{{item*8.00}}</text>
+  </view>
+  </block>
+  <view class="flex-row flex-cell fonzbill">
+    <text class="flex-cell flex-row">{{month}}月</text>
+    <text class="flex-cell flex-row">服务配送费</text>
+    <text class="flex-cell flex-row">1000</text>
+    <text class="flex-cell flex-row">1000</text>
+  </view>
+</view>
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class="weui-cells__title" style='padding-top:20rpx; padding-bottom:20rpx;'>可用优惠券({{coupons.length}}) <text style="font-size: 24rpx; color:#ccc;">每个账单只能试用一张优惠券</text></view>
+<view style='background-color:#FFFFFF;'>
+  <view class="section section_gap">
+    <radio-group class="radio-group" bindchange="radioChange">
+      <block wx:for="{{coupons}}" wx:for-item="item" wx:key="id">
+        <label class='weui-cell' style="color:#09bb64;"><radio value="{{item.id}}"/>{{item.name}}</label>
+      </block>
+    </radio-group>
+  </view>
+  <view class="btn-area" style='text-align:center; margin-top:30rpx;'>
+    <button class="weui-btn mini-btn" type="default" size="mini" formType="reset">不使用优惠券</button>
+  </view>
+  </view>
+</form>
+            <view class="weui-form-preview__bd" style='padding-top:60rpx;'>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__value">优惠金额:-¥{{bill_promo}}</view>
+                </view>
+            </view>
+            <view style="position:relative; padding:0px 15px 15px; color:#e96a4a; text-align:right;line-height:2.5em;">
+                <view class="weui-form-preview__value_in-hd">账单金额:¥{{bill_final}}</view>
+            </view>
+              <view class="page__bd page__bd_spacing" style="padding-bottom:130rpx;"><button class="weui-btn" type="primary" style="width:60%;">确认</button></view>
+               <view class="weui-panel">
+            <view class="weui-panel__bd" style="position: fixed; bottom: 0; width: 100%;">
+                <view class="weui-media-box weui-media-box_small-appmsg">
+                    <view class="weui-cells weui-cells_in-small-appmsg">
+                        <navigator url="../account-number/account-number" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                            <view class="weui-cell__hd"><image src="../../resources/hk.png" style="width: 20px;height: 20px;margin-right: 5px" /></view>
+                            <view class="weui-cell__bd weui-cell_primary">
+                                <view>汇款银行</view>
+                            </view>
+                            <view class="weui-cell__ft weui-cell__ft_in-access">查看</view>
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+        </view>

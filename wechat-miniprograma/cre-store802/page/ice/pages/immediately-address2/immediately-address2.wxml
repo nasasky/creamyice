@@ -1,0 +1,49 @@
+<form bindsubmit="formSubmit">
+  <view class="people">
+    联系人
+  </view>
+  <view class="message">
+    <view style='padding:10px;'>
+      <text>姓名</text><input name="name" placeholder="请填写补货人姓名" value="{{name}}" bindinput="setName" placeholder-style="font-size:28rpx;color:#999;"/>
+    </view>
+    <view style='padding:10px;'>
+      <text></text>
+      <view class="choose">
+         <!-- <view class="sir" bindtap="chooseId" data-id="先生">
+          <text class="{{id=='先生'?'quan iconfont icon-true':'quan'}}"></text>先生
+        </view>
+        <view bindtap="chooseId" data-id="女士">
+          <text class="{{id=='女士'?'quan iconfont icon-true':'quan'}}"></text>女士
+        </view>  -->
+        <radio-group name="sex">
+          <label style='padding-right:10px;'><radio value="先生" color="#e96a4a" checked/>先生</label>
+          <label><radio value="女士" color="#e96a4a"/>女士</label>
+        </radio-group> 
+      </view>
+    </view>
+    <view style='padding:10px;'>
+      <text>手机</text><input name="phone" placeholder="请填写补货人手机号码" value="{{phone}}" bindinput="setPhone" type="number" placeholder-style="font-size:28rpx;color:#999;"/>
+    </view>
+  </view>
+
+  <view class="people">
+    收货地址
+  </view>
+
+  <view class="message2">
+    <view>
+      <text class="width">地址</text>
+      <input class="width2" name="cityDetail" placeholder="例：上海市静安区万荣路777弄" bindinput="setCityDetail" value="{{cityDetail}}" placeholder-style="font-size:28rpx;color:#999;"/>
+    </view>
+    <view>
+      <text class="width">楼号-门牌号</text>
+      <input class="width2" name="cityDetail" placeholder="例：16号楼427室" bindinput="setCityDetail" value="{{cityDetail}}" placeholder-style="font-size:28rpx;color:#999;"/>
+    </view>
+  </view>
+  <!-- <view class="save" bindtap="saveAddress">
+    保存
+  </view> -->
+  <button class="save" formType="submit">保存</button>
+</form>
+
+

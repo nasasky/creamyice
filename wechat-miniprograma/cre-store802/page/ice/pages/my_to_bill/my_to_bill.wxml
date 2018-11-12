@@ -1,0 +1,66 @@
+<view class="page">
+    <view class="page__bd">
+         <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">已确认</view>
+                    <view class="weui-form-preview__value_in-hd">¥2400.00</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+            <view class="weui-form-preview__item" style='overflow: hidden;'>
+                    <view class="weui-form-preview__label">编号：2017090003</view>
+                    <view class="weui-form-preview__value"><view class="weui-badge weui-ff7800">二代</view>
+            </view>
+            </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">商铺</view>
+                    <view class="weui-form-preview__value">小隐于茶（晶品店）</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">账单日期</view>
+                    <view class="weui-form-preview__value">2018年1月</view> 
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">付款日期</view>
+                    <view class="weui-form-preview__value">本月1号-8号</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__ft">
+                <navigator url='../confirmed_bill_two/confirmed_bill_two' class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">查看本账单</navigator>
+            </view>
+        </view>
+       <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">已确认</view>
+                    <view class="weui-form-preview__value_in-hd">¥2400.00</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+            <view class="weui-form-preview__item" style='overflow: hidden;'>
+                    <view class="weui-form-preview__label">编号：2017090003</view>
+                    <view class="weui-form-preview__value"><view class="weui-badge">一代</view>
+            </view>
+            </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">商铺</view>
+                    <view class="weui-form-preview__value">小隐于茶（晶品店）</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">账单日期</view>
+                    <view class="weui-form-preview__value">2017年12月</view> 
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">付款日期</view>
+                    <view class="weui-form-preview__value">本月1号-8号</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__ft">
+                <navigator url='../confirmed_bill_two/confirmed_bill_two' class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">查看本账单</navigator>
+            </view>
+        </view>
+       
+
+    </view>
+</view>

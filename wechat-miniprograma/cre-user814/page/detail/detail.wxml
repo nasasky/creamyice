@@ -1,0 +1,197 @@
+<view wx:if='{{hasLoad}}' class="wx-view_KHAWVZ app-bg" data-c_e_id="wx_viewb7dbd52e">
+  <swiper autoplay="True" class="wx-swiper_Mn3JMs" data-c_e_id="wx_swiper43d9f094" indicator-dots="True" lower-threshold="50">
+    <swiper-item class="c-full wx-swiper-item_F6vCx8" data-c_e_id="wx_swiper_item015a5cd2">
+      <image bindtap="tap_d5808da3" class="wx-image_HsAX8s2" data-c_e_id="wx_image194006a3" mode="aspectFill" src="https://partner.creamyice.com{{list.src}}" style=" background-size: cover; background-position: center center; background-repeat: no-repeat; "
+      />
+    </swiper-item>
+    <swiper-item class="c-full wx-swiper-item_qGeJVI" data-c_e_id="wx_swiper_item1d2f7146">
+      <image class="wx-image_HsAX8s2" data-c_e_id="wx_image735f46d5" mode="aspectFill" src="https://partner.creamyice.com{{list.img}}" style=" background-size: cover; background-position: center center; background-repeat: no-repeat; " />
+    </swiper-item>
+  </swiper>
+  <view class='feature detail-bg'>
+    <view class="listitemInfoWrap" data-c_e_id="wx_view309b339d">
+      <view class="likeinfo" data-c_e_id="wx_viewcc4e89cb">
+        <text class="text_description" data-c_e_id="wx_text8c8804b3">{{list.store}}</text>
+      </view>
+    </view>
+    <view class="listitemInfoWrap" data-c_e_id="wx_view309b339d">
+      <view class="likeinfo" data-c_e_id="wx_viewcc4e89cb">
+        <text class="listitem_creattime" data-c_e_id="wx_text8c8804b3">{{list.address}}</text>
+      </view>
+      <text class="listitem_creattime" data-c_e_id="wx_text8c8804b3">{{list.distance? list.distance+'km' : '距离未知'}}</text>
+    </view>
+  </view>
+  <view class="detail-bg feature mt20" style='padding:10px 10px 5px 10px; font-size:30rpx;'>
+    <view wx:if='{{list.type == 1}}' style='width:100%;'>
+      <view class='colorf43'>
+        <text class='bca03'>减</text> 满{{list.full}}减{{list.reduce}},仅限冰淇淋商品使用
+      </view>
+    </view>
+    <view wx:elif='{{list.type == 2}}' style='width:100%;'>
+      <view class='color68b'>
+        <text class='bca04'>半</text> 第二件半价,仅限冰淇淋商品使用
+      </view>
+    </view>
+  </view>
+  <view class="weui-cell detail-bg feature mt20" style='padding:10px 10px 0px 10px;'>
+  </view>
+  <view class="weui-cell detail-bg feature" style='padding:5px 10px 10px 10px;'>
+    <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+      <image src="../../resources/tt.png" style="width: 25px; height:25px; display: block" />
+    </view>
+    <view class="weui-cell__bd">
+      <view>营业时间</view>
+      <view style="font-size: 13px;color: #999;">{{list.business_hours}}</view>
+    </view>
+  </view>
+  <view>
+    <view wx:if='{{list.enable == 0}}' class="weui-cells__title fs25">商户暂不支持在线购买</view>
+    <view wx:elif='{{!list.is_status}}' class="weui-cells__title fs25">机器保养中，暂不能购买</view>
+    <view wx:elif='{{!list.is_business}}' class="weui-cells__title fs25">商户休息中不能购买</view>
+    <view wx:elif='{{!list.is_dis}}' class="weui-cells__title fs25">距离商家太远不能购买</view>
+  </view>
+
+
+  <!--buycar.wxml-->
+  <view class="container page2">
+    <view wx:if='{{list.enable == 1 && list.is_dis && list.is_business && list.is_status && list.pro_list != "" && buycar_num>0}}'>
+      <view wx:if='{{list.type == 1}}' style='background:#e96a4a; font-size:14px;color:#FFF;width:100%;text-align: center; position: fixed;bottom:0;z-index: 9;margin-bottom:62px;padding:5px;'>
+        {{totalMoney
+        < list.full? '再买': ''}}<text wx:if='{{totalMoney < list.full}}' style='color:#ffe400;font-size:15px;'>{{list.full-totalMoney}}</text>{{totalMoney
+          < list.full? '元': ''}} {{totalMoney < list.full? '可': '已'}}减<text style='color:#ffe400;font-size:15px;'>{{list.reduce}}</text>元
+      </view>
+      <view wx:elif='{{list.type == 2}}' style='background:#e96a4a; font-size:14px;color:#FFF;width:100%;text-align: center; position: fixed;bottom:0;z-index: 9;margin-bottom:62px;padding:5px;'>
+        <view wx:if='{{buycar_num < 2}}'>再买
+          <text wx:if='{{buycar_num == 1}}' style='color:#ffe400;font-size:15px;'>{{2-buycar_num}}件</text>可享受
+          <text style='color:#ffe400;font-size:15px;'>第二件半价</text>
+        </view>
+        <view wx:else>已减
+          <text style='color:#ffe400;font-size:15px;'>7.5</text>元</view>
+      </view>
+    </view>
+    <!--再买一杯可享受半价-->
+    <view wx:if='{{list.enable == 1 && list.is_dis && list.is_business && list.is_status && list.pro_list != ""}}' class="settlement">
+      <view class="tlement">
+        <view class="orderLeft">
+          <view class="buycar_icon">
+            <view class="iconfont icon-buycar"></view>
+            <view class="buycar_num">{{buycar_num}}</view>
+          </view>
+          <view class="totalMoney">
+            <view wx:if='{{list.type == 1}}' class="price">合计:{{totalMoney
+              < list.full?totalMoney:totalMoney - list.reduce}}元 <text wx:if='{{totalMoney >= list.full}}' style='font-size:80%;color:rgb(186, 186, 186);text-decoration:line-through;'>原价¥{{totalMoney}}元</text>
+            </view>
+            <view wx:elif='{{list.type == 2}}' class="price">合计:{{buycar_num
+              < 2?totalMoney:totalMoney - 7.5}}元 <text wx:if='{{buycar_num >= 2}}' style='font-size:80%;color:rgb(186, 186, 186);text-decoration:line-through;'>原价¥{{totalMoney}}元</text>
+            </view>
+            <view wx:else class="price">合计:{{totalMoney}}元</view>
+
+          </view>
+        </view>
+        
+        <view wx:if='{{buycar_num > 0}}' class="toPay" bindtap="toSubmit">
+          <text>提交订单</text>
+        </view>
+        <view wx:else class="disablePay">
+          <text>提交订单</text>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="pro" wx:for="{{product}}" wx:key="this">
+      <view class="menuList menuList2">
+        <i wx:if='{{list.enable == 1 && list.is_dis && list.is_business && list.is_status && item.is_have}}' bindtap='shopping' data-id='{{item.id}}' class="{{item.selected==true?'iconfont .icon-true active':'iconfont .icon-true'}} mr10"></i>
+        <!--<icon wx:else type='cancel' class="iconfont"></icon>-->
+        <image src="https://partner.creamyice.com{{item.img_xiao}}"></image>
+        <view class="P_message">
+          <view class='color333'>{{item.name}}
+            <text class='bca01' wx:if='{{item.is_have}}'>热销中</text>
+            <text class='bca02' wx:else>已售完</text>
+          </view>
+          <view class="P_small">{{item.description}}</view>
+          <view class="P_bottom" catchtap="donothing">
+            <view>
+              <text class="price">¥{{item.price}} </text>
+            </view>
+            <view>
+              <view class="classname">
+                <text class="numBorder" data-id="{{index}}" catchtap="numReduce" style='{{(list.enable == 1&&list.is_dis&&item.num>0&&list.is_business&&list.is_status&&item.is_have)?"color: #FFF;background:#ff7800!important;border: 1rpx solid #FFF;":"color: #DDD; border: 1rpx solid #ddd;"}}font-size:30rpx;'>-</text>
+                <text class="numMiddle" style='padding:10px; font-size:30rpx;color: #666;'>{{item.num}}</text>
+                <text class="numBorder" data-id="{{index}}" catchtap="numAdd" style='{{(list.enable == 1&&list.is_dis&&item.num<10&&list.is_business&&list.is_status&&item.is_have)?"color: #FFF;background:#ff7800;":"color: #ddd;border: 1rpx solid #ddd;"}}font-size:30rpx; '>+</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+
+  </view>
+  <view wx:if="{{hasComment}}" class="weui-cells__title">用户评价({{comment.totalcomments?comment.totalcomments:0}})</view>
+  <view wx:if="{{hasComment}}" class="weui-cells weui-cells_after-title">
+    <view class="weui-cell detail-bb">
+      <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+        <image src="../../resources/history-empty.png" style="width: 50px; height: 50px; border-radius: 50px; display: block" />
+      </view>
+      <view class="weui-cell__bd">
+        <view>{{comment.username}}
+          <text style="font-size: 11px;color: #ddd; padding-left:10px;">{{comment.time}}</text>
+        </view>
+        <view>
+          <text style="font-size: 11px;color: #ddd;">{{comment.productname}}</text>
+        </view>
+        <view style="font-size: 12px;color: #999;">{{comment.content}}</view>
+      </view>
+    </view>
+    <navigator url='../evaluate/evaluate?sn={{sn}}'>
+      <view class="weui-cell weui-cell_access">
+        <view class="weui-cell__bd">
+          <view style="display: inline-block; vertical-align: middle;font-size: 12px;">查看更多评价</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+    </navigator>
+  </view>
+  <view class="weui-cells__title fs25">用户须知</view>
+  <view class="weui-cells weui-cells_after-title fs25">
+    <view class="weui-cell">
+
+      <view class="weui-cell__bd" style='line-height:22px;'>
+        <view style="font-size: 12px;color: #999;">· 无需预约，店铺高峰时可能需要耐心等待</view>
+        <view style="font-size: 12px;color: #999;">· 订单仅限本店使用，不可跨店使用</view>
+        <view style="font-size: 12px;color: #999;">· 下单成功后请尽快去店兑换本产品</view>
+      </view>
+
+    </view>
+  </view>
+  <view class="weui-cells__title fs25">门店地址</view>
+  <view class="weui-cells weui-cells_after-title fs25">
+    <view class="weui-cell">
+      <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+        <image src="../../resources/home.png" style="width: 20px; height: 20px; display: block" />
+      </view>
+      <view class="weui-cell__bd">
+        <view style="font-size: 12px;color: #999;">{{list.address}}</view>
+      </view>
+      <view bindtap="goMap" data-longitude="{{list.longitude}}" data-latitude="{{list.latitude}}" class="weui-cell__bd">
+        <view style="font-size: 12px;color:#0bb20c; text-align:right;">去这里</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-footer" style='padding:100rpx 0rpx 170rpx 0rpx;'>
+    <view class="weui-footer__links" bindtap="calling">
+      <navigator url="" class="weui-footer__link">客服电话：021-66290029
+        <!--{{list.tel? list.tel:'400-888888'}}-->
+      </navigator>
+    </view>
+    <view class="weui-footer__text" style='font-size: 12px;color: #ccc; padding-top:3px;'>客服时间：09:00-18:00 周一至周五</view>
+  </view>
+</view>
+<view wx:else style='text-align: center; padding-top:20px;'>
+  <loading>
+    加载中...
+  </loading>
+</view>

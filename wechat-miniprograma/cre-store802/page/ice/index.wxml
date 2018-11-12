@@ -1,0 +1,57 @@
+<view class="index bg">
+  <view class="member">
+    <view>
+      <image class="member-pic" src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="classname" style="overflow: hidden;">
+      <view style="float: left;" class="weui-cells__title"></view>
+      <view class="weui-cells__title">
+        <picker bindchange="bindCountryChange" value="{{machineIndex}}" range="{{machine_names}}">
+          <view style="font-size: 15px;  padding-right:5px; color:#FFF; ">{{machine_names[machineIndex]}}
+            <image src="resources/jt_xia.png" style="width: 13px; height: 8px;" />
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="weui-panel-bd">
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg krma_left" style="text-align: center; width: 50%;">
+        <view class="weui-media-box__title member-fonz40">{{sweety}}</view>
+        <view class="weui-media-box__desc member-fonz25">今日总计</view>
+      </view>
+
+      <view class="krma_left" style="text-align: center; width: 50%; padding-top:17px;">
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view class="weui-media-box__title member-fonz25">上月总计 {{last_month_stat}}</view>
+          <view class="weui-media-box__title member-fonz25" style="padding-top:5px;">本月总计 {{this_month_stat}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="member-fonz22 member-15">统计截止时间:{{datetime}}</view>
+  </view>
+  <view style='text-align: center;'>
+    <loading hidden="{{hasLoad}}">
+      加载中...
+    </loading>
+  </view>
+</view>
+
+<view>
+  <scroll-view scroll-x="true" class="xscroll_bar">
+    <view class="menu_item {{index==activeIndex?'active':''}}" style="width:{{itemWidth}};" wx:for="{{menus}}" bindtap="tabChange" data-index="{{index}}" wx:key="this">
+      <view class="{{!(index==0 || index-1==activeIndex || index==activeIndex)?'menu_item_border':''}}">
+        {{item}}
+      </view>
+    </view>
+  </scroll-view>
+  <view class="menu_content" hidden="{{activeIndex != 0}}">
+    <canvas canvas-id="sweetyCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+  </view>
+  <view class="menu_content" hidden="{{activeIndex != 1}}">
+    <canvas canvas-id="sweetyCanvas30" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+  </view>
+  <view class="menu_panel" bindtap="calling" style="padding-top:40rpx; padding-bottom:120rpx;  margin-bottom: 60rpx;">
+    <view>
+      <view>如果有问题请联系我们：86-15801817001</view>
+    </view>
+  </view>
+</view>

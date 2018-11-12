@@ -1,0 +1,56 @@
+<view wx:if='{{hasLoad}}'>
+  <view class="weui-cells weui-cells_after-title" style='margin-bottom:40rpx;'>
+    <view class="weui-cell">
+      <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+        <image src="../../resources/sh.png" style="width: 50px; height: 50px; display: block" />
+      </view>
+      <view class="weui-cell__bd">
+        <view>店名：{{name}}</view>
+        <view style="font-size: 13px;color: #888888;">地址：{{address}}</view>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_access">
+      <view class="weui-cell__bd">
+        <view style="display: inline-block; vertical-align: middle">今日总计：
+          <text class='weui-f780'>{{sweety}}</text>
+        </view>
+      </view>
+
+    </view>
+    <view class="weui-cell weui-cell_access">
+      <view class="weui-cell__bd">
+        <view style="display: inline-block; vertical-align: middle">本月总计：
+          <text class='weui-f780'>{{this_month_stat}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="weui-cell weui-cell_access">
+      <view class="weui-cell__bd">
+        <view style="display: inline-block; vertical-align: middle">上月总计：
+          <text class='weui-f780'>{{last_month_stat}}</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view>
+    <scroll-view scroll-x="true" class="xscroll_bar">
+      <view class="menu_item {{index==activeIndex?'active':''}}" style="width:{{itemWidth}};" wx:for="{{menus}}" bindtap="tabChange" data-index="{{index}}" wx:key="this">
+        <view class="{{!(index==0 || index-1==activeIndex || index==activeIndex)?'menu_item_border':''}}">
+          {{item}}
+        </view>
+      </view>
+    </scroll-view>
+    <view class="menu_content" hidden="{{activeIndex != 0}}">
+      <canvas canvas-id="sweetyCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+    </view>
+    <view class="menu_content" hidden="{{activeIndex != 1}}">
+      <canvas canvas-id="sweetyCanvas30" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+    </view>
+  </view>
+</view>
+<view wx:else style='text-align: center;'>
+  <loading>
+    加载中...
+  </loading>
+</view>

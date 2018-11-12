@@ -1,0 +1,5 @@
+@import "../../../common/index.wxss";
+@import "../../../common/lib/weui.wxss";
+.back-index{
+  padding:0 10%;color:black;background-color:grey;
+}

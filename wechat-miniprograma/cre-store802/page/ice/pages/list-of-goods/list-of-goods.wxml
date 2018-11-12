@@ -1,0 +1,19 @@
+<view class="weui-cells weui-cells_after-title weui-mb20" wx:for='{{product}}' wx:key='this'>
+  <view class="weui-cell">
+    <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+      <image src="https://partner.creamyice.com{{item.img_xiao}}" style="width: 80px; height: 70px; display: block" />
+    </view>
+    <view class="weui-cell__bd weui-mr20">
+      <view>{{item.name}}</view>
+      <view style="font-size: 16px;color: #ff7800;">￥<text style="font-size:25px;color: #ff7800;">{{item.price}}</text></view>
+    </view>
+    <view class="weui-cell__bd">
+      <view>
+      <button wx:if='{{item.is_up}}' class="weui-btn" type="primary" disabled="true" plain="true">产品已上架</button>
+      <button wx:else class="weui-btn" type="primary" disabled="true" plain="true">产品已下架</button>
+        <button wx:if='{{!item.is_up}}' data-pid='{{item.id}}' data-sn='{{item.sn}}' class="weui-btn" type="primary" plain="true" bindtap="upPro">上架本产品</button>
+         <button wx:else data-pid='{{item.id}}' data-sn='{{item.sn}}' class="weui-btn" type="warn" plain="true" bindtap="downPro">下架本产品</button> 
+      </view>
+    </view>
+  </view>
+</view>

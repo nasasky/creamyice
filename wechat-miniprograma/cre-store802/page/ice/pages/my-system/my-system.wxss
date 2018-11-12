@@ -1,0 +1,16 @@
+@import "../../../common/index.wxss";
+@import "../../../common/lib/weui.wxss";
+.weui-my{
+text-align: center; 
+}
+.weui-l30{ 
+  margin-left: 30px;
+  }
+  .weui-my2{
+    text-align: center;
+    margin: 80rpx; 
+  }
+.weui-ys{
+  color: #999;
+  font-size: 25rpx;
+}

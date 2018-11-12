@@ -1,0 +1,69 @@
+{
+  "debug": true, 
+  "window": {
+    "navigationBarTextStyle": "black", 
+    "navigationBarBackgroundColor": "#ebebeb", 
+    "navigationBarTitleText": "克瑞米艾冰淇淋", 
+    "backgroundColor": "#bdbdbd", 
+    "enablePullDownRefresh": true, 
+    "backgroundTextStyle": "dark"
+  }, 
+  "pages": [    
+    "page/feature/feature", 
+    "page/detail/detail",
+    "page/profile/profile",
+    "page/discover/discover", 
+    "page/notify/notify",   
+    "page/baseStyle/baseStyle",
+    "page/payment/payment",
+    "page/payment-success/payment-success",
+    "page/confirm-payment/confirm-payment",
+    "page/profile-success/profile-success",
+    "page/member-center/member-center",
+    "page/sign-in/sign-in",
+    "page/about/about",
+    "page/evaluate/evaluate",
+    "page/coupon/coupon",
+    "page/to-evaluate/to-evaluate",
+    "page/count-down/count-down"
+    
+    
+    
+
+
+    
+  ], 
+  "tabBar": {
+    "color": "#999", 
+    "selectedColor": "#ff7800", 
+    "borderStyle": "black", 
+    "list": [
+      {
+        "text": "买冰淇淋", 
+        "pagePath": "page/feature/feature", 
+        "iconPath": "resources/ice-img01.png", 
+        "selectedIconPath": "resources/ice-img02.png"
+      }, 
+{
+  "text": "我的订单",
+  "pagePath": "page/profile/profile",
+  "iconPath": "resources/order.png",
+  "selectedIconPath": "resources/order-hover.png"
+},
+
+      {
+        "text": "个人中心", 
+        "pagePath": "page/member-center/member-center", 
+        "iconPath": "resources/member.png", 
+        "selectedIconPath": "resources/member-hover.png"
+      }
+    ],
+    "backgroundColor": "#F7F7FA"
+  }, 
+  "networkTimeout": {
+    "connectSocket": "", 
+    "request": "", 
+    "downloadFile": "", 
+    "uploadFile": ""
+  }
+}

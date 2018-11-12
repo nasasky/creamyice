@@ -1,0 +1,107 @@
+<view class='page'>
+  <view hidden='{{!display}}' style='z-index:9999;position:fixed; width:100%; padding-top:50px; text-align:center; height:100%; background-color:rgba(0,0,0,0.7); '>
+    <view>
+      <view bindtap='dontReceive' style=' text-align: right; padding-right:30px; padding-bottom:10px;'>
+        <image src='../../resources/share-x.png' style='height:28px; width:31px;'></image>
+      </view>
+      <view style='padding-bottom:30px;'>
+        <view style='background-color:rgba(241,93,53,1); width:80%; margin: 0px auto; padding:20px 20px 20px 20px; border-radius: 25px;'>
+          <view>
+            <view class='txttop'>{{new_coupons[0].is_receive? '亲爱的，您已经领取过该红包！快去使用吧！':'亲爱的，你的运气棒棒哒！'}}</view>
+            <view wx:for='{{new_coupons}}' wx:key='this' class="packageList">
+              <view class="top"></view>
+              <view class="bottom"></view>
+              <view class="left">
+                <view>¥
+                  <text style='font-size:60rpx;'>{{item.amount}}</text>
+                </view>
+              </view>
+              <view class="right">
+                <view>{{item.name}}</view>
+                <view class="time">有效期至{{item.expire_time}}</view>
+              </view>
+            </view>
+          </view>
+
+          <view class='txtbot'>
+
+            <view>以上红包仅限克瑞米艾冰淇淋使用</view>
+            <view>需到店购买，暂不支持外送</view>
+          </view>
+        </view>
+      </view>
+      <view bindtap='receive'>
+        <image src='../../resources/share-bottom2.png' style='height:50px; width:170px;  '></image>
+      </view>
+    </view>
+  </view>
+
+  <swiper autoplay="True" class="wx-swiper_1NANrl" data-c_e_id="wx_swiperb0e59502" lower-threshold="50">
+    <swiper-item class="c-full wx-swiper-item_FzHVfG" data-c_e_id="wx_swiper_item0a22cff2">
+      <navigator class="wx-navigator_oHb4kO2" data-c_e_id="wx_navigator1d201966" hover-class="navigator-hover" />
+    </swiper-item>
+  </swiper>
+  <view class='feature'>
+    <view class='feature-title'>
+      上海
+      <image style='width:12px; height:12px;' src='../../resources/jiantou.png'></image>
+    </view>
+    <view>
+      <view class='feature-title1'>附近门店</view>
+      <view class='feature-title2'>为你推荐最近门店</view>
+    </view>
+    <scroll-view class="c-minheight wx-scroll-view_MBKQjG" data-c_e_id="wx_scroll_view_6d65baf2" lower-threshold="50" scroll-y="True" style="overflow-x: hidden; overflow-y: auto; " upper-threshold="50">
+      <view class="listitemWrap" data-c_e_id="wx_view687aaf2e" wx:for="{{storeList}}" wx:key="this">
+        <navigator wx:if="{{item.is_business}}" hover-class="navigator-hove" url="../detail/detail?sn={{item.sn}}">
+          <view>
+            <image src='https://partner.creamyice.com{{item.src}}' style=' width:100%;height: 150px;'></image>
+          </view>
+          <view wx:if='{{item.starttime > date}}' class="weui-badge" style="position: absolute;top: 1em;right: 0em;">新店</view>
+          <text style='padding:5px 10px 0px 10px;' class="text_description" data-c_e_id="wx_text354d27cc">{{item.store}}</text>
+
+          <view wx:if='{{item.type == 1}}' class='colorf43' style='padding:1px 0px 6px 10px;'>
+            <text class='bca03'>减</text> 满{{item.full}}减{{item.reduce}},仅限冰淇淋商品使用
+          </view>
+          <view wx:elif='{{item.type == 2}}' class='color68b' style='padding:1px 0px 6px 10px;'>
+            <text class='bca04'>半</text> 第二件半价,仅限冰淇淋商品使用
+          </view>
+
+          <view style='padding:0px 10px 10px 10px;' class="bottomGrayboder listitemInfoWrap" data-c_e_id="wx_view309b339d">
+            <view class="likeinfo" data-c_e_id="wx_viewcc4e89cb">
+              <image style='width:12px;height: 12px;' src='../../resources/location.png'></image>
+              <text class="listitem_creattime" data-c_e_id="wx_text8c8804b3">{{item.address}}</text>
+            </view>
+            <text class="listitem_creattime" data-c_e_id="wx_text8c8804b3">{{item.distance?item.distance+'km':''}}</text>
+          </view>
+        </navigator>
+        <view wx:else>
+          <view>
+            <image src='https://partner.creamyice.com{{item.src}}' style=' width:100%;height: 150px;'></image>
+          </view>
+          <view wx:if='{{item.starttime > date}}' class="weui-badge" style="position: absolute;top: 1em;right: 0em;">新店</view>
+          <view class="weui-badge" style="position: absolute; width:100%;height: 100%;top: 0; color:#f3f3f3; background-color:rgba(70, 70, 70, 0.6);font-size:45rpx; line-height: 170px;">商家休息中</view>
+          <!--<view wx:if='{{item.ver == 0}}' class="weui-badge" style="position: absolute;top: 1em;left:7em;">一代机</view>-->
+          <text style='padding:5px 10px 0px 10px;' class="text_description" data-c_e_id="wx_text354d27cc">{{item.store}}</text>
+          <view style='padding:0px 10px 10px 10px;' class="bottomGrayboder listitemInfoWrap" data-c_e_id="wx_view309b339d">
+            <view class="likeinfo" data-c_e_id="wx_viewcc4e89cb">
+              <image style='width:12px;height: 12px;' src='../../resources/location.png'></image>
+              <text class="listitem_creattime" data-c_e_id="wx_text8c8804b3">{{item.address}}</text>
+            </view>
+            <text class="listitem_creattime" data-c_e_id="wx_text8c8804b3">{{item.distance?item.distance+'km':''}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view style='text-align: center;'>
+        <loading hidden="{{hasLoad}}">
+          加载中...
+        </loading>
+      </view>
+      <view style=" width: 100%;padding-bottom:60rpx; padding-top:20rpx;" hidden="{{hasMore}}">
+        <view style=" height: 1px; background-color: #ddd; width: 33%; float: left;margin-top:10px;"></view>
+        <view style='float: left; color:#999; width: 33%;text-align:center;'>我是有底线的</view>
+        <view style=' height: 1px; background-color: #ddd; width: 33%; float: right;margin-top:10px;'></view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

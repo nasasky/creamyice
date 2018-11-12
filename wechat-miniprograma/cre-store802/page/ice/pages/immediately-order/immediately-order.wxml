@@ -1,0 +1,88 @@
+<view class="orderBlock">
+  <view class="head" wx:if="{{!restaurant}}" style='padding:15px;'>
+    <!--
+    <view class="address" bindtap="toMyAddress">
+      <view class="map">
+        <view class="iconfont icon-map2">樱花路80弄42号富荟广场1楼(桂源铺旁)</view>
+        <view class="name">
+          <text>李四先生</text>
+          <text class="phone">18316588222</text>
+        </view>
+      </view>
+      <view class="iconfont icon-more"></view>
+    </view>    
+    -->
+    <view class="section" style='padding-bottom:10px;'>
+      <label>补货人
+        <input bindinput='inputName' style='border: 1px solid #DDD; padding:5px 10px 5px 10px;' type='text' placeholder="请输入您的大名" auto-focus/>
+      </label>
+    </view>
+    <view class="section" style='padding-bottom:10px;'>
+      <label>补货人电话
+        <input bindinput='inputTelephone' style='border: 1px solid #DDD; padding:5px 10px 5px 10px;' type='text' placeholder="请输入手机号或座机号" auto-focus/>
+      </label>
+    </view>
+    <view class='section'>
+      <text>请选择配送日期：<text style='color:red;'>温馨提醒我们只在每周二提供配送服务</text></text>
+      <radio-group class="radio-group" bindchange="radioChange" style="padding:10px 0px 5px 0px;">
+        <label class="radio" wx:for="{{courDate}}" wx:key='this' style="padding:0px 10px 0px 0px;">
+          <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.name}}周二
+        </label>
+      </radio-group>
+    </view>
+  </view>
+</view>
+
+<view class="proMessage">
+  <view class="Title">
+    <view class="title">
+      <image src="../../resources/bill.png"></image>
+      {{machineName}}
+    </view>
+    <view class="iconfont icon-phone" bindtap="calling">联系小艾</view>
+  </view>
+
+  <view wx:for='{{material}}' wx:key='this'>
+    <view class='list' wx:if='{{item.selected}}'>
+      <view class="listLeft">
+        <view class="foodPic">
+          <image src="https://partner.creamyice.com{{item.img}}"></image>
+        </view>
+        <view class="message">
+          <text>{{item.name}}({{item.unit}})</text>
+        </view>
+      </view>
+      <view class="listRight">
+        X{{item.num}}
+      </view>
+    </view>
+  </view>
+
+
+<view class="other">
+  <view>
+    <text>补货备注</text>
+    <textarea bindinput='inputMessage' placeholder="请输入您的要求  可选" />
+  </view>
+</view>
+
+<view class='page2'>
+  <view class="settlement">
+    <view class="tlement">
+      <view class="orderLeft">
+        <view class="totalMoney">
+          <view class="price">小艾提醒：请确认补货单无误，再提交申请。</view>
+        </view>
+      </view>
+      <view wx:if='{{telName && telephone}}' class="toPay" bindtap="submitOrder">
+        <text>提交补货</text>
+      </view>
+      <view wx:else class='toPay' style='background-color:#C9C3C3;'>
+        <text>提交补货</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="padding">
+</view>
+</view>

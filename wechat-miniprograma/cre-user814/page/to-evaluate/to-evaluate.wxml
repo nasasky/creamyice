@@ -1,0 +1,53 @@
+        <view class="weui-cells weui-cells_after-title detail-bg" style='overflow: hidden;'>
+        <!--
+            <checkbox-group bindchange="checkboxChange">
+                <label class="weui-cell weui-check__label" wx:for="{{checkboxItems}}" wx:key="value">
+                    <checkbox class="weui-check" value="{{item.value}}" checked="{{item.checked}}"/>
+
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                        <icon class="weui-icon-checkbox_circle" type="circle" size="16" wx:if="{{!item.checked}}"></icon>
+                        <icon class="weui-icon-checkbox_success" type="success" size="16" wx:if="{{item.checked}}"></icon>
+                    </view>
+                    <view class="weui-cell__bd fs30">{{item.name}}</view>
+                </label>
+            </checkbox-group> -->
+
+            <view wx:for='{{Items}}' wx:key='this' wx:for-index="outIndex" wx:for-item="outItem">
+                 <radio-group bindchange="radioChange" wx:for="{{outItem}}" wx:key='this' >
+                  <label class="weui-cell weui-check__label">
+                    <radio class="weui-check" value="{{item.id}},{{outIndex}}" checked="{{item.checked}}"/>
+
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                        <icon class="weui-icon-checkbox_circle" type="circle" size="16" wx:if="{{!item.checked}}"></icon>
+                        <icon class="weui-icon-checkbox_success" type="success" size="16" wx:if="{{item.checked}}"></icon>
+                    </view>
+                    <view class="weui-cell__bd fs30">{{item.name}}</view>
+                  </label>
+                </radio-group>
+            </view>
+        </view>
+<!--星星评价
+    <view class="comment1-description" style="display:flex;flex-direction:row;">
+        <view class="comment1-description1">描述相符</view>
+        <view  class="star-pos" style="display:flex;flex-direction:row;">
+            <view class="starsM  {{flag2>=1? '': 'hideStar'}}"  bindtap="changeColor11"></view>
+            <view class="starsM  {{flag2>=2? '': 'hideStar'}}"  bindtap="changeColor12"></view>
+            <view class="starsM  {{flag2>=3? '': 'hideStar'}}"  bindtap="changeColor13"></view>
+            <view class="starsM  {{flag2>=4? '': 'hideStar'}}"  bindtap="changeColor14"></view>
+            <view class="starsM  {{flag2>=5? '': 'hideStar'}}"  bindtap="changeColor15"></view>
+        </view>
+    </view>
+        -->
+        <view class="weui-cells__title">商品评价</view>
+        <view class="weui-cells weui-cells_after-title detail-bg" style='overflow: hidden;'>
+            <view class="weui-cell" style='width: 100%;'>
+                <view class="weui-cell__bd">
+                    <textarea bindblur='textareaInput' class="weui-textarea" placeholder-class="psection" placeholder="还记得吃过这家店的冰淇淋吗？写点评记录生活、分享体验！" style="height: 4.3em;" />
+                    <view class="weui-textarea-counter">0/200</view>
+                </view>
+            </view>
+        </view>
+
+         <view class="weui-btn-area" style='margin:30px;'>
+            <button class="weui-btn" type="primary" bindtap="showTopTips">发表评价</button>
+        </view>

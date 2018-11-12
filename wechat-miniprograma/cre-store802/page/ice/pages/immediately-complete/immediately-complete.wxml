@@ -1,0 +1,35 @@
+<view class="page">
+<view style='width:100%; text-align: center; padding:20px;font-size:20px; color:#e96a4a;'>订单号：{{list.number}}</view>
+  <view class="page__bd">
+    <view class="container carts-list">
+      <view wx:for="{{material}}" wx:key='this' class="carts-item">
+        <view>
+          <image class="carts-image" src="https://partner.creamyice.com{{item.img}}" mode="aspectFill" />
+        </view>
+        <view class="carts-text">
+          <text class="carts-title">{{item.name}}</text>
+          <view class="carts-subtitle">
+            <text class="carts-price" style='width:100px;'>{{item.unit}}</text>
+            <text bindtap="bindMinus" data-index="{{index}}" class='carts-txt'>-</text>
+            <view class="numInput" style="">
+              <input type="text" value="{{item.num}}" style="width:10px;height:30px" />
+            </view>
+            <text bindtap="bindPlus" data-index="{{index}}" class='carts-txt'>+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='page2'>
+  <view class="settlement">
+    <view class="tlement">
+      <view style='width: 100%; text-align: center;' wx:if='{{total > 0}}' class="toPay" bindtap="toSubmit">
+        <text>立即修改</text>
+      </view>
+      <view wx:else class="toPay" style='background-color:#D8D4D4;'>
+        <text>至少一种补货</text>
+      </view>
+    </view>
+  </view>
+</view>

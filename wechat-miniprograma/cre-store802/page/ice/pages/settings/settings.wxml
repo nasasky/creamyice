@@ -1,0 +1,41 @@
+ <view class="weui-cells weui-cells_after-title mt30">
+            <navigator url="../settings2/settings2" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          
+                <view class="weui-cell__bd">头像修改</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+</view> 
+  <view class="weui-cells weui-cells_after-title mt30">
+    <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                  <view class="weui-label">名称：</view>
+              </view>
+              <view class="weui-cell__bd">
+                  <input class="weui-input" placeholder="二只猫"/>
+              </view>
+              <button class="weui-badge weui-1AAD19" bindtap="openToast" style="margin-left: 5px;">修改</button>
+    </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title mt30">
+    <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                  <view class="weui-label">手机号码：</view>
+              </view>
+              <view class="weui-cell__bd">
+                  <input class="weui-input" placeholder="15898985656"/>
+              </view>
+              <button class="weui-badge weui-1AAD19" bindtap="openToast" style="margin-left: 5px;">修改</button>
+    </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title mt30">
+    <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd">
+                  <view class="weui-label">密码修改</view>
+              </view>
+              <view class="weui-cell__bd">
+                  <input class="weui-input" placeholder="原密码"/>
+                  <input class="weui-input" placeholder="新密码"/>
+              </view>
+              <button class="weui-badge weui-1AAD19" bindtap="openToast" style="margin-left: 5px;">修改</button>
+    </view>
+    </view>

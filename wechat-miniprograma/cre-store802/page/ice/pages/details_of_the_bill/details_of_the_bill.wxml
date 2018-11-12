@@ -1,0 +1,54 @@
+<view class="weui-panel weui-panel_access weui-mb20">
+            <view class="weui-panel__bd">
+                <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                        <image class="weui-media-box__thumb" src="../../resources/sh.png" />
+                    </view>
+                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                        <view class="weui-media-box__title">小隐于茶（晶品店）<view class="weui-badge weui-ff7800">二代</view></view>
+                        <view class="weui-media-box__desc">地址：{{machine.address}}</view>
+                        <view class="weui-media-box__desc">编号：{{machine.sn}}</view>
+                        <view class="weui-media-box__desc">单价：8元</view>
+                       <view class="weui-media-box__desc" style="padding-top:5px;">账期：{{year}}-{{month}}-{{1}}至{{year}}-{{month}}-{{days}}</view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+        <view class="page">
+     <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view>
+            <view class="weui-tab__panel">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                <view id="panel" class="flex-column weui-mb20">
+                <view class="flex-cell flex-row">
+                <text class="flex-cell flex-row">时间</text>
+                </view>
+                <block wx:for="{{stats}}" wx:for-item="item">
+                <view class="flex-row flex-cell fonzbill">
+                <text class="flex-cell flex-row">15:43</text>
+                <text class="flex-cell flex-row">1</text>
+                </view>
+                </block>
+                </view>
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">中杯</view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">小杯</view>
+            </view>
+        </view>
+    </view>
+</view>          
+
+
+            <view style="position:relative; padding:30px 15px 15px; color:#e96a4a; text-align:center;line-height:2.5em;">
+                <view class="weui-form-preview__value_in-hd">已确认(账单金额:¥{{bill_final}})</view>
+            </view>
+
+              

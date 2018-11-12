@@ -1,0 +1,104 @@
+<view wx:if='{{type == "pay"}}'>
+  <view class="weui-tab__content">
+    <view class="myPackage">
+      <radio-group class="radio-group" bindchange="radioChange">
+        <lable class="packageList" wx:for="{{coupons}}" wx:key='*this'>
+          <view class="top"></view>
+          <view class="bottom"></view>
+          <view class="left">
+            <view>¥
+              <text class="price">{{item.amount}}</text>
+            </view>
+            <view>满{{item.condition}}元可用</view>
+          </view>
+          <view class="right">
+            <view>{{item.name}}</view>
+            <view class="time">有效期至{{item.expire_time}}</view>
+            <view class="phone">{{item.description}}</view>
+          </view>
+          <radio style='margin-right:10px;' value="{{item.cuscouponid + ',' + item.amount}}" />
+        </lable>
+      </radio-group>
+    </view>
+  </view>
+</view>
+<view wx:else>
+  <view class="page">
+    <view class="page__bd">
+      <view class="weui-tab">
+        <view class="weui-navbar" style="position:fixed;background-color:white;">
+          <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+              <view class="weui-navbar__title">{{item}}</view>
+            </view>
+          </block>
+          <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+        </view>
+        <view class="weui-tab__panel">
+          <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+            <view class="myPackage">
+              <view class="packageList" wx:for="{{coupons}}" wx:key='*this'>
+                <view class="top"></view>
+                <view class="bottom"></view>
+                <view class="left">
+                  <view>¥
+                    <text style='font-size:60rpx;'>{{item.amount}}</text>
+                  </view>
+                  <view>满{{item.condition}}元可用</view>
+                </view>
+                <view class="right">
+                  <view>{{item.name}}</view>
+                  <view class="time">有效期至{{item.expire_time}}</view>
+                  <view>{{item.description}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+            <view class="myPackage">
+              <view class="packageList" wx:for="{{coupons}}" wx:key='*this'>
+                <view class="top"></view>
+                <view class="bottom"></view>
+                <view class="left">
+                  <view>¥
+                    <text class="price">{{item.amount}}</text>
+                  </view>
+                  <view>满{{item.condition}}元可用</view>
+                </view>
+                <view class="right">
+                  <view>{{item.name}}</view>
+                  <view class="time">有效期至{{item.expire_time}}</view>
+                  <view class="phone">{{item.description}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+            <view class="myPackage">
+              <view class="packageList" wx:for="{{coupons}}" wx:key='*this'>
+                <view class="top"></view>
+                <view class="bottom"></view>
+                <view class="left">
+                  <view>¥
+                    <text style='font-size:60rpx;'>{{item.amount}}</text>
+                  </view>
+                  <view>满{{item.condition}}元可用</view>
+                </view>
+                <view class="right">
+                  <view>{{item.name}}</view>
+                  <view class="time">有效期至{{item.expire_time}}</view>
+                  <view>{{item.description}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+         <view style='text-align: center; padding-top:20px;'>
+            <loading hidden="{{hidden}}">
+              加载中...
+            </loading>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>

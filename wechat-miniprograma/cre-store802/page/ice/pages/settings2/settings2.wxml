@@ -1,0 +1,8 @@
+<view class="member">
+<view>
+  <image class="member-pic" src="../../resources/touxiang.png"></image>
+</view>
+
+  <button style="width: 60%;margin: 80rpx auto; " class="weui-btn" type="primary" plain="true" bindtap="success">上传头像</button>
+    
+</view>

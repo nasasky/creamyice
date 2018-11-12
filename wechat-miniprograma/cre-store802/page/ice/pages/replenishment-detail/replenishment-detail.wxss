@@ -1,0 +1,10 @@
+@import "../../../common/index.wxss";
+@import "../../../common/lib/weui.wxss";
+
+/* page/ice/pages/replenishment-detail/replenishment-detail.wxss */
+page{width:100%;height:100%;}
+.lists{
+  margin-top:100rpx;
+  font-size:35rpx;
+
+}

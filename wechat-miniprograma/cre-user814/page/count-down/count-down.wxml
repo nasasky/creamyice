@@ -1,0 +1,5 @@
+<view style=' padding-top:50px; text-align: center;'>
+<view class='countDown'><text style='color:#ff7800; font-size: 50rpx;'>{{countDownNum}}</text></view>
+<view style='color:#000; padding-top:60px;'>商户接单中</view>
+<view style='color:#999; padding-top:5px; font-size: 25rpx;'>小艾正在努力为你生成取餐号，请不要离开。</view>
+</view>

@@ -1,0 +1,47 @@
+<view class="page">
+<view class="page__bd">
+<view class="weui-tab">
+<view class="weui-navbar">
+
+<block wx:for="{{tabs}}" wx:key="this">
+<view wx:if="{{item.count != 0}}" id="{{index}}" data-citemsid="{{item.id}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+<view class="weui-navbar__title">{{item.name}}({{item.count}})</view>
+</view>
+<view wx:else class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}">
+<view class="weui-navbar__title">{{item.name}}({{item.count}})</view>
+</view>
+</block>
+
+</view>
+<view class="weui-tab__panel">
+
+<view wx:if="{{comments != ''}}">
+<view class="detail-bb" wx:for="{{comments}}" wx:key="this">
+<view class="weui-cell">
+<view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+<image src="{{head_img.avatarUrl || '/resources/touxiang.png'}}" style="width: 50px; height: 50px; border-radius: 50px; display: block" />
+</view>
+<view class="weui-cell__bd">
+<view>{{item.username}}
+<text style="font-size: 11px;color: #ddd; padding-left:10px;">{{item.time}}</text>
+</view>
+<view>
+<text style="font-size: 11px;color: #ddd;">{{item.productname}}</text>
+</view>
+<view style="font-size: 12px;color: #999;">{{item.content}}</view>
+</view>
+</view>
+</view>
+</view>
+<view style='text-align: center; padding-top:20px;' wx:else>
+暂无评论
+</view>
+</view>
+</view>
+</view>
+</view>
+<view style='text-align: center; padding-top:20px;'>
+<loading hidden="{{hidden}}">
+加载中...
+</loading>
+</view>

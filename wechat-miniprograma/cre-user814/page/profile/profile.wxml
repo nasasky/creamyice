@@ -1,0 +1,76 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" data-status_id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+      </view>
+
+      <view class="weui-tab__panel fs25">
+        <view style='text-align: center; padding-top:20px;' wx:if="{{!hidden}}">
+          <loading>
+            加载中...
+          </loading>
+        </view>
+        <view wx:else>
+          <!--账单开始-->
+          <view wx:if="{{orders.length}}">
+            <view wx:for="{{orders}}" wx:key="this">
+              <view style="margin-top:20rpx;background-color:#fff;padding:25rpx;">
+                <navigator url='/page/detail/detail?sn={{item.sn}}'>
+                  <view style="height:80rpx;line-height: 80rpx;" class='weui-cell__ft weui-cell__ft_in-access'>
+                    <image class="apply-choice" src="../../resources/home1.png"></image>
+                    <text>{{item.store}}</text>
+                  </view>
+                </navigator>
+                <ul style="display:block;margin-left:42rpx;">
+                  <li wx:for="{{item.details}}" wx:key="this" style="display:inline-block;width:100%;line-height:55rpx; color:#aaa;font-size:24rpx;">类名：{{item[0]}}
+                    <text class='ml20'>单价：{{item[2]}}元</text>
+                    <text class='ml20'>数量：{{item[1]}}</text>
+                    <text style="float:right;">合计：{{item[1] * item[2]}}元</text>
+                  </li>
+                  <li style="display:inline-block;width:100%;line-height:55rpx;color:#aaa;font-size:24rpx;">下单时间：
+                    <text style="float:right;">{{item.paytime}}</text>
+                  </li>
+                  <li style="display:inline-block;width:100%;line-height:55rpx;color:#aaa;font-size:24rpx;">订单号：
+                    <text style="float:right;">{{item.or_number}}</text>
+                  </li>
+                  <li style="display:inline-block;width:100%;line-height:55rpx;color:#aaa;font-size:24rpx;">门店地址
+                    <text style="float:right;">{{item.address}}</text>
+                  </li>
+                  <li style="display:inline-block;width:100%;line-height:55rpx;color:#aaa;font-size:24rpx;">优惠金额
+                    <text style="float:right;color:red;font-weight:bold;">{{item.discount}}元</text>
+                  </li>
+                  <li style="display:inline-block;width:100%;line-height:55rpx;font-size:24rpx;">交易成功
+                    <text style="float:right;" class='weui-f780'>实付金额<text style='font-size:48rpx;'>{{item.total_amount}}</text>元</text>
+                  </li>
+                </ul>
+              </view>
+
+
+              <view wx:if="{{item.status == 2}}" style="border-width: 1px 0 0 0;border-color:#f0f0f0;border-style:solid;height:115rpx;line-height:115rpx;border:;background-color:#fff;padding: 0 25rpx 0 67rpx;">
+                <navigator class="btn-submit" url='../payment-success/payment-success?orid={{item.orid}}&or_number={{item.or_number}}'>查看取餐号</navigator>
+              </view>
+
+              <view wx:if="{{item.status == 3}}" style="border-width: 1px 0 0 0;border-color:#f0f0f0;border-style:solid;height:115rpx;line-height:115rpx;border:;background-color:#fff;padding: 0 25rpx 0 67rpx;">
+                <navigator url='../to-evaluate/to-evaluate?sn={{item.sn}}&orid={{item.orid}}&comments_name={{item.comments_name}}' class="btn-submit">发表评价</navigator>
+              </view>
+
+              <view wx:if="{{item.status == 4}}" style="border-width: 1px 0 0 0;border-color:#f0f0f0;border-style:solid;height:115rpx;line-height:115rpx;border:;background-color:#fff;padding: 0 25rpx 0 67rpx;">
+                <!--<navigator url='../profile-success/profile-success?orid={{item.orid}}&or_number={{item.or_number}}' class="btn-submit">查看评价</navigator>-->
+                <navigator url='../evaluate/evaluate?referer=member&orid={{item.orid}}&or_number={{item.or_number}}' class="btn-submit">查看评价</navigator>
+              </view>
+            </view>
+          </view>
+          <!-- 暂时没有任何评论 -->
+          <view style='text-align: center; padding-top:20px;' wx:else>
+            暂时没有账单
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,104 @@
+@import "../../common/weui.wxss";
+.weui-badge {
+padding:.15em .4em;
+width:60px;
+border-radius:0px;
+background-color:#e64340;
+color:#fff;
+height: 25px;
+line-height:20px;
+text-align:center;
+font-size:14px;
+vertical-align:middle;
+
+}
+.small {
+    position: relative;
+    float: left;
+    height: 18px;
+    margin-right: 20px;
+    margin-left: 5px;
+    background-color: #d0021b;
+    min-width: 10px;
+}
+.small-desc {
+    line-height: 18px;
+    font-size: 12px;
+    color: #fff;
+    margin-left: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+.promotion {
+    display: inline-block;
+    color: #ff7800;
+    border: 1px solid #ff7800;
+    font-size: 10px;
+    text-align: left;
+    padding: 2px 4px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+  }
+  .packageList {
+  position: relative;
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  background: white;  
+}
+.top,.bottom {
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background: #f15d35;
+}
+.top {
+  top: -25rpx;
+  left: 190rpx;
+}
+.bottom {
+  top: 150rpx;
+  left: 190rpx;
+}
+.left {
+  width: 32%;
+  color:#f15d35;
+  text-align: center;
+  padding: 40rpx 10rpx;
+  border-right: 4rpx #f15d35 dashed;
+}
+.price {
+  font-size: 60rpx;
+}
+.right {
+  text-align: left;
+  color: #999;
+  width: 68%;
+  line-height: 50rpx;
+  padding: 20rpx 20rpx 20rpx 40rpx;
+}
+.time {
+  font-size: 28rpx;
+}
+.phone {
+  font-size: 28rpx;
+  color: #999;
+}
+.txttop{
+  font-size: 40rpx;
+  color: #FFF;
+
+}
+.txtbot{
+  margin-top: 30px;
+  font-size: 25rpx;
+  line-height: 20px;
+  color: #f3f3f3;
+}
+.bca03{
+    background:#F43530; padding: 0px 3px 0px 3px; color: #FFF; font-size: 23rpx; 
+  }
+.colorf43{
+    color: #F43530; padding-bottom: 3px; overflow: hidden;
+  }

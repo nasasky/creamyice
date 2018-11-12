@@ -1,0 +1,56 @@
+      <view class="proMessage">
+  <view class="Title">
+    <view class="title">
+      <image src="{{img}}"></image>
+      <text>{{store}}</text>
+    </view>
+  </view>
+
+  <view wx:for='{{shopCar}}' wx:key='this' class="list">
+    <view class="listLeft">
+      <view class="foodPic">
+        <image src="https://partner.creamyice.com{{item.img_xiao}}"></image>
+      </view>
+      <view class="message">
+        <text>{{item.name}}</text>
+        <text class="price">¥{{item.price}}元</text>
+      </view>
+    </view>
+    <view class="listRight">
+      X{{item.num}}
+    </view>
+  </view>
+  <view class="orherPrice" wx:if='{{type == 1 && fullReduce > 0}}'>
+    <text class='iconfont'> 店铺活动</text>
+    <text class='iconfont'>满减优惠<text style="color:#ff7800;">-{{fullReduce}}</text>元</text>
+  </view>
+  <view class="orherPrice" wx:elif='{{type == 2 && totalNum > 1}}'>
+    <text class='iconfont'> 店铺活动</text>
+    <text class='iconfont'>第二件半价活动<text style="color:#ff7800;">-{{7.5}}</text>元</text>
+  </view>
+  <navigator hidden='{{redPack == 0}}' open-type='navigate' class="smallBorder" url='../coupon/coupon?type=pay&totalMoney={{totalMoney}}&totalNum={{totalNum}}'>
+    <view class="orherPrice">
+      <text class="iconfont icon-pag">红包</text>
+      <text class="iconfont icon-more">红包优惠<text style="color:#ff7800;">-{{redPack}}</text>元</text>
+    </view>
+  </navigator>
+  <view hidden='{{redPack > 0}}'>
+    <view class="orherPrice">
+      <text class="iconfont icon-pag">红包</text>
+      <text class="iconfont">暂无可以使用红包</text>
+    </view>
+  </view>
+</view>
+
+<view class="orderType">
+  <text>支付方式</text>
+  <text>微信支付</text>
+  <icon type="success" size="20" />
+</view>
+
+
+<view class="submitOrder">
+  <text class="discount">已优惠¥{{discount}}元</text>
+  <text>实付 <text class="price">¥{{totalMoney - discount}}</text>元</text>
+  <text class="toPay" bindtap="submitOrder">去付款</text>
+</view>

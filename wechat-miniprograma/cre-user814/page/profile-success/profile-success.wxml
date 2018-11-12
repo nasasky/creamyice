@@ -1,0 +1,15 @@
+<view style=' text-align: center; color:#333; overflow: hidden; margin-top:100px;' class='fs35'>
+<view>
+订单号：<text>{{or_number}}</text>
+</view>
+<view style=' text-align: center; color:#999;' class='fs25'>产品名称：{{comments.name}}</view>
+<view style=' text-align: center; color:#999;' class='fs25'>评价类型标签：{{comments.tagname}}</view>
+<view style=' text-align: center; color:#999;' class='fs25'>评价详情：{{comments.content}}</view>
+<view class='detail-bg fs25' style=' text-align: center; color:#999; padding:20px; margin-bottom:30px; margin-top:30px;'>
+<view class="page__bd page__bd_spacing">
+<view class="button-sp-area">
+<button class="weui-btn" type="primary" plain="true" bindtap=''>继续购买</button>
+</view>
+</view>
+</view>
+</view>

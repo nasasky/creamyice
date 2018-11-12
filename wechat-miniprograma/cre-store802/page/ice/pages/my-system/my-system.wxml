@@ -1,0 +1,64 @@
+<view class="page">
+    <view class="page__hd weui-my2">
+        <view class="weui-badge weui-1AAD19">系统管理员</view>
+        <view class="page__desc">克瑞米艾001</view>
+    </view>
+
+    <view class="page__bd">
+
+        <view class="weui-cells__title">申请开通系统权限列表</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                    <image src="../../resources/logo.jpg" style="width: 50px; height: 50px; display: block"/>
+                </view>
+                <view class="weui-cell__bd">
+                    <view>一只猫</view>
+                    <view style="font-size: 13px;color: #888888;">申请系统权限</view>
+                </view>
+          
+            </view>
+            <view class="weui-my">
+             <button class="" type="primary" size="mini" bindtap="openToast">同意</button>
+            <button class="weui-l30" type="default" size="mini" bindtap="openToast2">拒绝</button>
+            </view>
+        </view>
+
+        <view class="weui-cells weui-cells_after-title mt30">
+            <view class="weui-cell">
+                <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                    <image src="../../resources/logo.jpg" style="width: 50px; height: 50px; display: block"/>
+                </view>
+                <view class="weui-cell__bd">
+                    <view>可米艾可</view>
+                    <view style="font-size: 13px;color: #888888;">申请系统权限</view>
+                </view>
+          
+            </view>
+            <view class="weui-my">
+             <button class="" type="primary" size="mini" bindtap="openToast">同意</button>
+            <button class="weui-l30" type="default" size="mini" bindtap="openToast2">拒绝</button>
+            </view>
+        </view>
+    </view>  
+
+    <view class="weui-cells weui-cells_after-title mt30">
+            <view class="weui-cell">
+                <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+                    <image src="../../resources/logo.jpg" style="width: 50px; height: 50px; display: block"/>
+                </view>
+                <view class="weui-cell__bd">
+                    <view>可米艾可</view>
+                    <view style="font-size: 13px;color: #888888;">已开通：成员</view>
+                </view>
+          
+            </view>
+            <view class="weui-my">
+            <button class="weui-l30" type="default" size="mini" bindtap="openToast3">禁用</button>
+            <button class="weui-l30" type="default" size="mini" bindtap="openToast4">删除</button>
+            </view>
+
+    </view>  
+    
+</view>
+

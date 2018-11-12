@@ -1,0 +1,61 @@
+@import "../../../common/index.wxss";
+@import "../../../common/lib/weui.wxss";
+.weui-cell__bd1{
+  text-align: center;
+  margin: 20px; 
+  color: #999;
+}
+.weuie96a4a{
+  color:#e96a4a;
+}
+.weuie888{
+  color: #e88831; 
+}
+.weui3fb135{
+  color: #3fb135;
+}
+.weui60{
+  width: 30%; 
+  overflow: hidden; 
+  margin:auto;
+  margin-top: 80rpx;
+  margin-bottom: 50rpx;
+}
+.weui-fs{
+    font-size: 25rpx!important;
+}
+.weui-ta{
+  text-align: center;
+}
+.weui-rz{
+  text-align: center;
+  color: #e96a4a;
+  font-weight: bold;
+}
+.weui-dz{
+text-align: center;
+color: #e96a4a;
+font-size: 30rpx;
+margin: 8rpx;
+}
+.weui-dz2{
+text-align: center;
+color: #e96a4a;
+font-size: 25rpx;
+margin: 8rpx;
+}
+.weui-rq{
+text-align: center;
+color: #bcbcbc;
+font-size: 20rpx;
+margin: 8rpx;
+}
+/*!
+ * Copyright 2017 Tencent, Inc.
+ * Licensed under the MIT license
+ */
+.weui-grids{border-top:1rpx solid #FFF;border-left:1rpx solid #FFF;overflow:hidden}
+.weui-grid { color: #fff; position:relative;float:left;padding:20px 10px; background-color:#1AAD19; width:33.33333333%;box-sizing:border-box;border-right:1rpx solid #e1e1e1;border-bottom:1rpx solid #e1e1e1}
+.weui-grid_active{background-color:#089a07;}
+.weui-grid__icon{display:block;width:28px;height:28px;margin:0 auto}
+.weui-grid__label{margin-top:5px;display:block;text-align:center;color:#FFF;font-size:14px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}

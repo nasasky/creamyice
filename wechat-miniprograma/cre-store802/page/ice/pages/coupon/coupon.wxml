@@ -1,0 +1,24 @@
+<block wx:for="{{coupons}}" wx:for-item="item" wx:key="id">
+  <block wx:if="{{item.status==0}}">
+  <view class="coupona" style="background-color: #e8a32f; margin-top:40rpx;" >
+    <view class="couponb">可使用</view>
+    <view class="couponc">{{item.name}} </view>
+    <view class="coupone">
+      <view style="float: left; font-size: 25rpx; color:#999;">克瑞米艾</view>
+      <view style="float: right; font-size: 25rpx; color:#999;">有效期至：{{item.validthru}}</view>
+    </view>
+  </view>
+  </block>
+  <block wx:if="{{item.status==1}}">
+  <view class="coupona coupong" style="background-color: #e8a32f;  margin-top:40rpx;">
+    <view class="couponf"><image src="../../resources/ysy.png" class="couponi"/></view>
+    <view class="couponb">已使用</view>
+    <view class="couponc">{{item.name}}</view>
+    <view class="coupone">
+      <view style="float: left; font-size: 25rpx; color:#999;">克瑞米艾</view>
+      <view style="float: right; font-size: 25rpx; color:#999;">有效期至：{{item.validthru}}</view>
+    </view>
+  </view>
+  </block>
+</block>
+

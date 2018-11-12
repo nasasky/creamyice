@@ -1,0 +1,15 @@
+@import "../../common/weui.wxss";
+/*全局样式*/  
+
+.payment-bg{
+  position: fixed; bottom: 0; width: 100%; background: #FFF; 
+}
+.payment-left{
+   float: left; padding-left:10px; height:50px; line-height: 50px;
+}
+.payment-right{
+  width: 40%; color:#FFF; float: right; background: #ff7800; text-align: center; height:50px; line-height: 50px;
+}
+.feoh{
+  overflow: hidden;
+}

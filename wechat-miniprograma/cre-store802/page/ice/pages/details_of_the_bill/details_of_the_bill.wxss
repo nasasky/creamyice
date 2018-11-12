@@ -1,0 +1,45 @@
+@import "../../../common/index.wxss";
+@import "../../../common/lib/weui.wxss";
+
+#panel{
+  background:#fff;
+  margin-top: 30rpx;
+    border-top: 1rpx solid #ddd;
+}
+
+#panel text{
+  line-height: 6vh;
+  border-right: 1rpx solid #ddd;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.flex-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.flex-cell{
+  flex: 1;
+}
+.fonzbill{
+  font-size: 25rpx;
+}
+page,
+.page,
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-tab__content{
+    text-align: center;
+}
