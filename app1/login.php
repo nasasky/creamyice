@@ -37,9 +37,9 @@ if($account && $password){
 					$lastlogin = $row['timestamp'];
 				}
 			}
-			$data = ['status'=>'SUCCESS','msg'=>'Hello ! Login Successful...','account'=>$row['account'],'username'=>$row['username'],'lastlogin'=>$lastlogin];
+			$data = ['status'=>'SUCCESS','msg'=>'Hello ! Login Successful...','account'=>$row['account'],'username'=>$row['username'],'mode'=>$row['mode'],'lastlogin'=>$lastlogin];
 		}else{
-			$data = ['status'=>'FAILURE','msg'=>'Sorry ! Account OR Password Error...','account'=>$row['account'],'username'=>$row['username'],'lastlogin'=>$lastlogin];
+			$data = ['status'=>'FAILURE','msg'=>'Sorry ! Account OR Password Error...','account'=>$row['account'],'username'=>$row['username'],'mode'=>0,'lastlogin'=>$lastlogin];
 		}
 		$return_json = ['code'=>200,'msg'=>'quer user successful','data'=>$data];
 	}

@@ -26,10 +26,10 @@ if($sql){
 		if($row = $result->fetch_assoc()){
 			$row['paytime'] = date('Y-m-d H:i:s',$row['paytime']);
 			// set order status timeout
-			if($row['status'] == 1 && ( $row['timestamp']+120 ) < time() ){
+			if($row['status'] == 1 && ( $row['timestamp']+20 ) < time() ){
 				$row['status'] = 0;
 			}
-			$return_json = ['code'=>200,'msg'=>$type.' order is successful','data'=>$row];
+			$return_json = ['code'=>200,'msg'=>$type.' order is successful','data'=>['order'=>$row]];
 		}
 	}
 }

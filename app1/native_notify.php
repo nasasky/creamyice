@@ -30,7 +30,7 @@ class PayNotifyCallBack extends WxPayNotify
             if( $mysqli = $this->mysqli() ){
             	$order_id = $this->paramDecrypt($result['attach']);
                 if ($this->queryIsNotify($order_id, $mysqli) == 1) {
-                    $time = time();
+					$time = time();
                     $sql       = "UPDATE app_order SET status=2,paytime={$time} WHERE id=".$order_id;
                     $result = $mysqli->query($sql);
                     if ($result === false) {

@@ -1,0 +1,8 @@
+Array
+(
+    [wid] => 4
+    [token] => 19837e4d1739579b41f5a76de9b555c8
+    [sn] => 1bc
+    [account_] => test
+    [password_] => test1234
+)

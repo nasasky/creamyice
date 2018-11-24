@@ -17,6 +17,7 @@ $time = time();
 // create order to database
 $sql = "INSERT INTO `app_order`(`number`,`sn`,`user`,`prepay_id`,`proname`,`price`,`amount`,`count`,`discount`,`type`,`status`,`paytime`,`shiptime`,`timestamp`) 
 VALUES('{$order_number}','{$sn}','shenmidewo','prepayid','".$product['name']."',".$product['price'].",".$product['amount'].",".$product['num'].",".$product['discount'].",1,1,1924876800,1924876800,{$time})";
+
 $result = $mysqli->query($sql);
 if($result === false){
 	exit(json_encode(['code'=>1201,'msg'=>'create order failure']));
@@ -63,8 +64,8 @@ function get_order_number(){
 	list($usec,$sec) = explode(' ',microtime());
 	return sprintf('%.0f',($sec + $usec) * 100000000);
 }
-ob_end_clean();
-QRcode::png($result['code_url']);
+// ob_end_clean();
+// QRcode::png($result['code_url']);
 
 
 ?>

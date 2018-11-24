@@ -27,20 +27,17 @@ if(!$sn){
 }
 
 //(3)Mysqli Database Connecting
-$mysqli = new mysqli('127.0.0.1', 'root', 'wl940207', 'ice');
+$mysqli = new mysqli('127.0.0.1', 'wanglong', 'wl940207', 'ice');
 //$mysqli = new mysqli('47.96.106.128', 'ice', 'ice731', 'ice');
 if ($mysqli->connect_errno) {
     exit( json_encode(['code' => 1200, 'msg' => 'Mysqli Connection Error']) );
 }
 $mysqli->set_charset("utf8");
 
-// encrypt parameter
 function param_encrypt($param){
 	return base64_encode(urlencode(base64_encode($param)));
 }
 
-// decrypt parameter
 function param_decrypt($encrypt){
 	return base64_decode(urldecode(base64_decode($encrypt)));
 }
-

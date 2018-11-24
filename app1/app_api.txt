@@ -7,7 +7,7 @@
     String sn      =  机器唯一标识
 
 ----------------------------------------------------------------------------------------------------
-// 一： App-wechat native api 微信支付二维码接口
+// 一： wechat native api 微信支付二维码接口
     (1) URL地址: 
             https://partner.creamyice.com/app1/native.php
     (2) POST请求所需数据:
@@ -36,7 +36,7 @@
                 "msg": "machine is no authorization"
             }
 --------------------------------------------------------------------------------------------------------            
-// 二： App product api 产品接口
+// 二： wechat product api 产品接口
     (1) URL地址: 
             https://partner.creamyice.com/app1/product.php
     (2) POST请求所需数据:
@@ -76,7 +76,7 @@
                 "msg": "machine is no authorization"
             }
 --------------------------------------------------------------------------------------------------------
-// 三：App-wechat order api 订单支付结果查询
+// 三： wechat order api 订单支付结果查询
     (1) URL地址: 
             https://partner.creamyice.com/app1/order.php
     (2) POST请求所需数据:
@@ -105,45 +105,4 @@
                 "code": 1003,
                 "msg": "machine is no authorization"
             }
---------------------------------------------------------------------------------------------------------    
-// 四： App login api 登录接口
-    (1) URL地址: 
-            https://partner.creamyice.com/app1/login.php
-    (2) POST请求所需数据:
-            String account = '账号'
-            String password = '密码'
-    (3) RETURN接口返回数据:
-        成功返回--示例：
-            json类型  备注： code = 200分两种情况 
-                (1) status = SUCCESS 登录成功 
-                (2) status = FAILURE 登录失败
-                登录成功 -- 账号密码存在且密码正确
-                {
-                    "code": 200,
-                    "msg": "quer user successful",
-                    "data": {
-                        "status": "SUCCESS",   //登录成功
-                        "msg": "Hello ! Login Successful...",
-                        "account": "test",
-                        "username": "test1234",
-                        "lastlogin": "1541486550"
-                    }
-                }   
-                登录失败 -- 账号或者密码错误
-                {
-                    "code": 200,
-                    "msg": "quer user successful",
-                    "data": {
-                        "status": "FAILURE",   //登录失败账号或者密码错误
-                        "msg": "Sorry ! Account OR Password Error...",
-                        "account": "test",
-                        "username": "I Dont Know",
-                        "lastlogin": 1541487229
-                    }
-                }
-        错误返回--示例：
-            {
-                "code": 1003,
-                "msg": "request parameter failure"
-            }
---------------------------------------------------------------------------------------------------------    
+--------------------------------------------------------------------------------------------------------       

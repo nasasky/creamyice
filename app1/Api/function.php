@@ -1,61 +1,6 @@
 <?php
 
 /**
- * 获取每人名下所有机器每月售卖数量
- * @param  [type] $wid [description]
- * @param  [type] $my  [description]
- * @param  [type] $yea [description]
- * @param  [type] $mon [description]
- * @return [type]      [description]
- */
-function get_all_month_count($wid, $my, $yea, $mon)
-{
-    $max_val = 0;
-
-    $sql = "SELECT SUM(d.count) AS ct FROM so_diary d,weixin w
-      WHERE d.month=" . $mon . " AND d.year=" . $yea . " AND d.sn=w.sn AND w.wid=" . $wid;
-
-    $result = $my->query($sql);
-    if ($result === false) {
-        echo $my->error;
-        echo $my->errno;
-    } else {
-        while ($row = $result->fetch_assoc()) {
-            $max_val += $row['ct'];
-        }
-    }
-    //echo $max_val." ..  ";
-    return $max_val;
-}
-/**
- * 获取机器每月最大的售卖数量
- * @param  [type] $sn  [description]
- * @param  [type] $my  [description]
- * @param  [type] $yea [description]
- * @param  [type] $mon [description]
- * @return [type]      [description]
- */
-function get_month_count($sn, $my, $yea, $mon, $table)
-{
-    $max_val = 0;
-
-    //$sql = "SELECT SUM(count) AS ct FROM diary WHERE month=".$mon." AND year=".$yea." AND sn='".$sn."'";
-    $sql = "SELECT SUM(count) AS ct FROM " . $table . " WHERE month=" . $mon . " AND year=" . $yea . " AND sn='" . $sn . "'";
-
-    $result = $my->query($sql);
-    if ($result === false) {
-        echo $my->error;
-        echo $my->errno;
-    } else {
-        while ($row = $result->fetch_assoc()) {
-            $max_val += $row['ct'];
-        }
-    }
-    //echo $max_val." ..  ";
-    return $max_val;
-}
-
-/**
  * 实现将数组按照值分组重组
  * @param  [array] $array 要重组的数组
  * @param  [key]  分组值的键名
